@@ -28,6 +28,11 @@
 			<artifactId>model-module</artifactId>
 			<version>${project.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>br.com.smarthouse</groupId>
+			<artifactId>core-arduino</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 
 		<!-- Spring Boot dependencies -->
 		<dependency>

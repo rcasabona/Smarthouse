@@ -36,10 +36,16 @@ public class TemperaturaAmbienteController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET, produces = "application/json")
 	public @ResponseBody TemperaturaAmbiente get() {
-		getTemperatura();
+//		getTemperatura();
+//		setLuzLigada();
 		TemperaturaAmbiente temperatura = montaTemperaturaAmbiente();
 		temperaturaAmbienteService.create(temperatura);
 		return temperatura;
+	}
+	
+	private void setLuzLigada() {
+		ArduinoSerial arduino = new ArduinoSerial("/dev/cu.usbmodem1411");
+		arduino.send("l");
 	}
 	
 	private void getTemperatura() {
