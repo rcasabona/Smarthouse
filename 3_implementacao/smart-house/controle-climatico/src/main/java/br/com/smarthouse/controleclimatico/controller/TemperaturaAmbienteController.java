@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import br.com.smarthouse.arduino.ArduinoSerial;
 import br.com.smarthouse.controleclimatico.business.TemperaturaAmbienteService;
 import br.com.smarthouse.controleclimatico.model.QualidadeDoAr;
 import br.com.smarthouse.controleclimatico.model.TemperaturaAmbiente;
@@ -35,9 +36,27 @@ public class TemperaturaAmbienteController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET, produces = "application/json")
 	public @ResponseBody TemperaturaAmbiente get() {
+		getTemperatura();
 		TemperaturaAmbiente temperatura = montaTemperaturaAmbiente();
 		temperaturaAmbienteService.create(temperatura);
 		return temperatura;
+	}
+	
+	private void getTemperatura() {
+		ArduinoSerial arduino = new ArduinoSerial("/dev/cu.usbmodem1411");
+		
+		Thread t = new Thread() {
+			@Override
+			public void run() {
+				arduino.initialize();
+				
+				while(true) {
+					System.out.println(arduino.read());
+				}
+			}
+		};
+		
+		t.start();
 	}
 
 }
