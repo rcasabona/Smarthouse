@@ -1,16 +1,22 @@
 package br.com.smarthouse.controleclimatico.controller;
 
+import java.util.concurrent.TimeUnit;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.io.json.JettisonMappedXmlDriver;
+
 import br.com.smarthouse.arduino.ArduinoSerial;
 import br.com.smarthouse.controleclimatico.business.TemperaturaAmbienteService;
 import br.com.smarthouse.controleclimatico.model.QualidadeDoAr;
 import br.com.smarthouse.controleclimatico.model.TemperaturaAmbiente;
 import br.com.smarthouse.controleclimatico.model.TipoTemperatura;
+import br.com.smarthouse.modelgenerics.dto.LeituraAmbienteDTO;
 
 @Controller
 @RequestMapping("/temperaturaAmbiente")
@@ -36,7 +42,7 @@ public class TemperaturaAmbienteController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET, produces = "application/json")
 	public @ResponseBody TemperaturaAmbiente get() {
-//		getTemperatura();
+		getTemperatura();
 //		setLuzLigada();
 		TemperaturaAmbiente temperatura = montaTemperaturaAmbiente();
 		temperaturaAmbienteService.create(temperatura);
@@ -57,7 +63,22 @@ public class TemperaturaAmbienteController {
 				arduino.initialize();
 				
 				while(true) {
-					System.out.println(arduino.read());
+					String json = arduino.read();
+					
+					if (json != null) {
+						XStream xstream = new XStream(new JettisonMappedXmlDriver());
+						xstream.alias("jsonLeituraAmbiente", LeituraAmbienteDTO.class);
+						LeituraAmbienteDTO leituraAmbienteDTO = (LeituraAmbienteDTO) xstream.fromXML(json);
+						
+						System.out.println(leituraAmbienteDTO);
+					}
+					
+
+					try {
+						TimeUnit.SECONDS.sleep(1);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
 				}
 			}
 		};

@@ -1,0 +1,106 @@
+------Start of DE processing------ = [1/6/18 12:51:51:644 BRST]
+Exception = java.net.UnknownHostException
+Source = com.ibm.ws.transaction.services.TransactionManagerService$1
+probeid = 135
+Stack Dump = java.net.UnknownHostException: MacBook-Pro-de-Rafael.local: MacBook-Pro-de-Rafael.local: nodename nor servname provided, or not known
+	at java.net.InetAddress.getLocalHost(InetAddress.java:1475)
+	at com.ibm.ws.transaction.services.TransactionManagerService$1.run(TransactionManagerService.java:133)
+	at com.ibm.ws.transaction.services.TransactionManagerService$1.run(TransactionManagerService.java:127)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.ibm.ws.transaction.services.TransactionManagerService.doStartup(TransactionManagerService.java:127)
+	at com.ibm.ws.transaction.services.JTMConfigurationProvider.setTMS(JTMConfigurationProvider.java:398)
+	at com.ibm.ws.transaction.services.TransactionManagerService.activate(TransactionManagerService.java:98)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.felix.scr.impl.inject.BaseMethod.invokeMethod(BaseMethod.java:224)
+	at org.apache.felix.scr.impl.inject.BaseMethod.access$500(BaseMethod.java:39)
+	at org.apache.felix.scr.impl.inject.BaseMethod$Resolved.invoke(BaseMethod.java:617)
+	at org.apache.felix.scr.impl.inject.BaseMethod.invoke(BaseMethod.java:501)
+	at org.apache.felix.scr.impl.inject.ActivateMethod.invoke(ActivateMethod.java:302)
+	at org.apache.felix.scr.impl.inject.ActivateMethod.invoke(ActivateMethod.java:294)
+	at org.apache.felix.scr.impl.manager.SingleComponentManager.createImplementationObject(SingleComponentManager.java:298)
+	at org.apache.felix.scr.impl.manager.SingleComponentManager.createComponent(SingleComponentManager.java:109)
+	at org.apache.felix.scr.impl.manager.SingleComponentManager.getService(SingleComponentManager.java:906)
+	at org.apache.felix.scr.impl.manager.SingleComponentManager.getServiceInternal(SingleComponentManager.java:879)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager.activateInternal(AbstractComponentManager.java:749)
+	at org.apache.felix.scr.impl.manager.DependencyManager$SingleStaticCustomizer.addedService(DependencyManager.java:1012)
+	at org.apache.felix.scr.impl.manager.DependencyManager$SingleStaticCustomizer.addedService(DependencyManager.java:968)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$Tracked.customizerAdded(ServiceTracker.java:1215)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$Tracked.customizerAdded(ServiceTracker.java:1136)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$AbstractTracked.trackAdding(ServiceTracker.java:945)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$AbstractTracked.track(ServiceTracker.java:881)
+	at org.apache.felix.scr.impl.manager.ServiceTracker$Tracked.serviceChanged(ServiceTracker.java:1167)
+	at org.apache.felix.scr.impl.BundleComponentActivator$ListenerInfo.serviceChanged(BundleComponentActivator.java:127)
+	at org.eclipse.osgi.internal.serviceregistry.FilteredServiceListener.serviceChanged(FilteredServiceListener.java:109)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.dispatchEvent(BundleContextImpl.java:920)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:148)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.publishServiceEventPrivileged(ServiceRegistry.java:862)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.publishServiceEvent(ServiceRegistry.java:801)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistrationImpl.register(ServiceRegistrationImpl.java:127)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.registerService(ServiceRegistry.java:225)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.registerService(BundleContextImpl.java:469)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager$3.register(AbstractComponentManager.java:887)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager$3.register(AbstractComponentManager.java:874)
+	at org.apache.felix.scr.impl.manager.RegistrationManager.changeRegistration(RegistrationManager.java:132)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager.registerService(AbstractComponentManager.java:941)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager.activateInternal(AbstractComponentManager.java:741)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager.enableInternal(AbstractComponentManager.java:675)
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager.enable(AbstractComponentManager.java:430)
+	at org.apache.felix.scr.impl.manager.ConfigurableComponentHolder.enableComponents(ConfigurableComponentHolder.java:657)
+	at org.apache.felix.scr.impl.BundleComponentActivator.initialEnable(BundleComponentActivator.java:341)
+	at org.apache.felix.scr.impl.Activator.loadComponents(Activator.java:390)
+	at org.apache.felix.scr.impl.Activator.access$200(Activator.java:54)
+	at org.apache.felix.scr.impl.Activator$ScrExtension.start(Activator.java:265)
+	at org.apache.felix.utils.extender.AbstractExtender.createExtension(AbstractExtender.java:254)
+	at org.apache.felix.utils.extender.AbstractExtender.modifiedBundle(AbstractExtender.java:227)
+	at org.osgi.util.tracker.BundleTracker$Tracked.customizerModified(BundleTracker.java:482)
+	at org.osgi.util.tracker.BundleTracker$Tracked.customizerModified(BundleTracker.java:1)
+	at org.osgi.util.tracker.AbstractTracked.track(AbstractTracked.java:232)
+	at org.osgi.util.tracker.BundleTracker$Tracked.bundleChanged(BundleTracker.java:444)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.dispatchEvent(BundleContextImpl.java:908)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:148)
+	at org.eclipse.osgi.internal.framework.EquinoxEventPublisher.publishBundleEventPrivileged(EquinoxEventPublisher.java:213)
+	at org.eclipse.osgi.internal.framework.EquinoxEventPublisher.publishBundleEvent(EquinoxEventPublisher.java:120)
+	at org.eclipse.osgi.internal.framework.EquinoxEventPublisher.publishBundleEvent(EquinoxEventPublisher.java:112)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor.publishModuleEvent(EquinoxContainerAdaptor.java:168)
+	at org.eclipse.osgi.container.Module.publishEvent(Module.java:476)
+	at org.eclipse.osgi.container.Module.start(Module.java:467)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1634)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1614)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1585)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1528)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+Caused by: java.net.UnknownHostException: MacBook-Pro-de-Rafael.local: nodename nor servname provided, or not known
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$1.lookupAllHostAddr(InetAddress.java:901)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1295)
+	at java.net.InetAddress.getLocalHost(InetAddress.java:1471)
+	... 72 more
+
+Dump of callerThis
+Object type = com.ibm.ws.transaction.services.TransactionManagerService$1
+  this$0 = class com.ibm.ws.transaction.services.TransactionManagerService@378359aa
+    tc = class com.ibm.websphere.ras.TraceComponent@3a194f61
+      strings[0] = "TraceComponent[com.ibm.ws.transaction.services.TransactionManagerService,class com.ibm.ws.transaction.services.TransactionManagerService,[transaction],com.ibm.ws.transaction.services.TransactionMessages,null]"
+    isClient = false
+    xaFlowCallbacksInitialised = false
+    _bundleContext = class org.eclipse.osgi.internal.framework.BundleContextImpl@62594cca
+      findHookName = "org.osgi.framework.hooks.bundle.FindHook"
+      valid = true
+      bundle = class org.eclipse.osgi.internal.framework.EquinoxBundle@236b775f
+      container = class org.eclipse.osgi.internal.framework.EquinoxContainer@4668b788
+      debug = class org.eclipse.osgi.internal.debug.Debug@4e965d5
+      servicesInUse = class java.util.HashMap@771c8577
+      activator = null
+      contextLock = class java.lang.Object@717e84b8
+    serialVersionUID = 4736484431543418052
+  serialVersionUID = 1724888584600742946
+  $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@4ee2f6cd
+    strings[0] = "TraceComponent[com.ibm.ws.transaction.services.TransactionManagerService$1,class com.ibm.ws.transaction.services.TransactionManagerService$1,[transaction],com.ibm.ws.transaction.services.TransactionMessages,null]"
+

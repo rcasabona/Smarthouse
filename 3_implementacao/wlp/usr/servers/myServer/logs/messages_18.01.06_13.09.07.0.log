@@ -1,0 +1,120 @@
+********************************************************************************
+product = WebSphere Application Server 17.0.0.4 (wlp-1.0.19.201712061531)
+wlp.install.dir = /MRXFOCUS/PROJETOS/MRXFOCUS_SMARTHOUSE/smarthouse/3_implementacao/wlp/
+java.home = /Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home/jre
+java.version = 1.7.0_79
+java.runtime = Java(TM) SE Runtime Environment (1.7.0_79-b15)
+os = Mac OS X (10.13.1; x86_64) (pt_BR)
+process = 37125@localhost
+********************************************************************************
+[1/6/18 13:06:46:213 BRST] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0001I: O servidor myServer foi ativado.
+[1/6/18 13:06:46:228 BRST] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0100I: Este produto é licenciado para uso de desenvolvimento e de produção limitada. Os termos de licença integrais podem ser visualizados aqui: https://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/license/base_ilan/ilan/17.0.0.4/lafiles/pt.html
+[1/6/18 13:06:47:699 BRST] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           I CWWKE0002I: O kernel foi iniciado após 6.722 segundos
+[1/6/18 13:06:47:784 BRST] 00000016 com.ibm.ws.kernel.feature.internal.FeatureManager            I CWWKF0007I: Atualização do recurso iniciada.
+[1/6/18 13:06:49:611 BRST] 0000000f com.ibm.ws.app.manager.internal.monitor.DropinMonitor        A CWWKZ0058I: Monitorando dropins para aplicativos. 
+[1/6/18 13:06:49:841 BRST] 0000001d com.ibm.ws.tcpchannel.internal.TCPChannel                    I CWWKO0219I: O Canal TCP defaultHttpEndpoint foi iniciado e agora está atendendo solicitações no host localhost  (IPv4: 127.0.0.1) porta 9080.
+[1/6/18 13:06:50:108 BRST] 00000021 com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Iniciando o aplicativo helloworld.
+[1/6/18 13:06:50:390 BRST] 00000021 com.ibm.ws.session.WASSessionCore                            I SESN8501I: O gerenciador de sessões não localizou um local de armazenamento persistente; objetos HttpSession serão armazenados na memória do servidor de aplicativos local.
+[1/6/18 13:06:50:406 BRST] 00000021 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Carregando o Módulo da Web: helloworld.
+[1/6/18 13:06:50:411 BRST] 00000021 com.ibm.ws.webcontainer                                      I SRVE0250I: O Módulo da Web helloworld foi ligado ao default_host.
+[1/6/18 13:06:50:413 BRST] 00000021 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Aplicativo da Web disponível (default_host): http://localhost:9080/helloworld/
+[1/6/18 13:06:50:421 BRST] 00000021 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0001I: O aplicativo helloworld foi iniciado em 0.314 segundos.
+[1/6/18 13:06:50:487 BRST] 00000016 com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0012I: O servidor instalou os recursos a seguir: [usr:arduino-1.0, jsp-2.2, servlet-3.0].
+[1/6/18 13:06:50:488 BRST] 00000016 com.ibm.ws.kernel.feature.internal.FeatureManager            I CWWKF0008I: Atualização do recurso concluída em 2.790 segundos.
+[1/6/18 13:06:50:488 BRST] 00000016 com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0011I: O servidor myServer está pronto para executar um planeta mais inteligente.
+[1/6/18 13:06:50:566 BRST] 00000019 com.ibm.ws.session.WASSessionCore                            I SESN0176I: Um novo contexto de sessão será criado para a chave do aplicativo default_host/helloworld
+[1/6/18 13:06:50:585 BRST] 00000019 com.ibm.ws.util                                              I SESN0172I: O gerenciador de sessões está usando a implementação SecureRandom padrão Java para geração do ID de sessão.
+[1/6/18 13:06:50:717 BRST] 0000001a com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: Um arquivo de configuração para um plug-in de servidor da web foi automaticamente gerado para este servidor em /MRXFOCUS/PROJETOS/MRXFOCUS_SMARTHOUSE/smarthouse/3_implementacao/wlp/usr/servers/myServer/logs/state/plugin-cfg.xml.
+[1/6/18 13:07:01:008 BRST] 00000016 com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [helloworld] [/helloworld] [/index.jsp]: Inicialização bem sucedida.
+[1/6/18 13:07:01:161 BRST] 00000016 com.ibm.ws.webcontainer.util.ApplicationErrorUtils           E SRVE0777E: Exceção lançada pela classe de aplicativo 'com.ibm.wasdev.arduino.impl.ArduinoAsyncImpl.findCommPort:228'
+java.lang.IllegalArgumentException: Could not find COM port from : [/dev/cu.usbmodem1411], in available ports: [cu.Bluetooth-Incoming-Port, tty.Bluetooth-Incoming-Port, cu.usbmodem1411, tty.usbmodem1411]
+	at com.ibm.wasdev.arduino.impl.ArduinoAsyncImpl.findCommPort(ArduinoAsyncImpl.java:228)
+	at com.ibm.wasdev.arduino.impl.ArduinoAsyncImpl.open(ArduinoAsyncImpl.java:151)
+	at com.ibm.wasdev.arduino.impl.ServiceManager.get(ServiceManager.java:74)
+	at com.ibm.wasdev.arduino.ArduinoService.get(ArduinoService.java:31)
+	at com.ibm.wasdev.arduino.ArduinoService.get(ArduinoService.java:27)
+	at com.ibm._jsp._index._jspService(_index.java:101)
+	at com.ibm.ws.jsp.runtime.HttpJspBase.service(HttpJspBase.java:100)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:668)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.service(ServletWrapper.java:1255)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:743)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:440)
+	at com.ibm.wsspi.webcontainer.servlet.GenericServletWrapper.handleRequest(GenericServletWrapper.java:118)
+	at com.ibm.ws.jsp.webcontainerext.AbstractJSPExtensionServletWrapper.handleRequest(AbstractJSPExtensionServletWrapper.java:207)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1156)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1004)
+	at com.ibm.ws.webcontainer.webapp.WebAppRequestDispatcher.dispatch(WebAppRequestDispatcher.java:1414)
+	at com.ibm.ws.webcontainer.webapp.WebAppRequestDispatcher.forward(WebAppRequestDispatcher.java:171)
+	at com.ibm.ws.webcontainer.extension.DefaultExtensionProcessor.handleRequest(DefaultExtensionProcessor.java:790)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1156)
+	at com.ibm.ws.webcontainer.webapp.WebApp.handleRequest(WebApp.java:4962)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.handleRequest(DynamicVirtualHost.java:314)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:995)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.run(DynamicVirtualHost.java:279)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink$TaskWrapper.run(HttpDispatcherLink.java:957)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.wrapHandlerAndExecute(HttpDispatcherLink.java:357)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.ready(HttpDispatcherLink.java:316)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:499)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleNewRequest(HttpInboundLink.java:433)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.processRequest(HttpInboundLink.java:313)
+	at com.ibm.ws.http.channel.internal.inbound.HttpICLReadCallback.complete(HttpICLReadCallback.java:70)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.requestComplete(WorkQueueManager.java:501)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.attemptIO(WorkQueueManager.java:571)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.workerRun(WorkQueueManager.java:926)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager$Worker.run(WorkQueueManager.java:1015)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+[1/6/18 13:07:01:411 BRST] 00000016 com.ibm.ws.logging.internal.impl.IncidentImpl                I FFDC1015I: Um Incidente de FFDC foi criado: "java.lang.IllegalArgumentException: Could not find COM port from : [/dev/cu.usbmodem1411], in available ports: [cu.Bluetooth-Incoming-Port, tty.Bluetooth-Incoming-Port, cu.usbmodem1411, tty.usbmodem1411] com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters 1105" em ffdc_18.01.06_13.07.01.0.log
+[1/6/18 13:07:01:415 BRST] 00000016 com.ibm.ws.webcontainer.webapp                               E SRVE0315E: Ocorreu uma exceção: java.lang.Throwable: java.lang.IllegalArgumentException: Could not find COM port from : [/dev/cu.usbmodem1411], in available ports: [cu.Bluetooth-Incoming-Port, tty.Bluetooth-Incoming-Port, cu.usbmodem1411, tty.usbmodem1411]
+	at com.ibm.ws.webcontainer.webapp.WebApp.handleRequest(WebApp.java:5006)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.handleRequest(DynamicVirtualHost.java:314)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:995)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.run(DynamicVirtualHost.java:279)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink$TaskWrapper.run(HttpDispatcherLink.java:957)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.wrapHandlerAndExecute(HttpDispatcherLink.java:357)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.ready(HttpDispatcherLink.java:316)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:499)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleNewRequest(HttpInboundLink.java:433)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.processRequest(HttpInboundLink.java:313)
+	at com.ibm.ws.http.channel.internal.inbound.HttpICLReadCallback.complete(HttpICLReadCallback.java:70)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.requestComplete(WorkQueueManager.java:501)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.attemptIO(WorkQueueManager.java:571)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.workerRun(WorkQueueManager.java:926)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager$Worker.run(WorkQueueManager.java:1015)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalArgumentException: Could not find COM port from : [/dev/cu.usbmodem1411], in available ports: [cu.Bluetooth-Incoming-Port, tty.Bluetooth-Incoming-Port, cu.usbmodem1411, tty.usbmodem1411]
+	at com.ibm.wasdev.arduino.impl.ArduinoAsyncImpl.findCommPort(ArduinoAsyncImpl.java:228)
+	at com.ibm.wasdev.arduino.impl.ArduinoAsyncImpl.open(ArduinoAsyncImpl.java:151)
+	at com.ibm.wasdev.arduino.impl.ServiceManager.get(ServiceManager.java:74)
+	at com.ibm.wasdev.arduino.ArduinoService.get(ArduinoService.java:31)
+	at com.ibm.wasdev.arduino.ArduinoService.get(ArduinoService.java:27)
+	at com.ibm._jsp._index._jspService(_index.java:101)
+	at com.ibm.ws.jsp.runtime.HttpJspBase.service(HttpJspBase.java:100)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:668)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.service(ServletWrapper.java:1255)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:743)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:440)
+	at com.ibm.wsspi.webcontainer.servlet.GenericServletWrapper.handleRequest(GenericServletWrapper.java:118)
+	at com.ibm.ws.jsp.webcontainerext.AbstractJSPExtensionServletWrapper.handleRequest(AbstractJSPExtensionServletWrapper.java:207)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1156)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1004)
+	at com.ibm.ws.webcontainer.webapp.WebAppRequestDispatcher.dispatch(WebAppRequestDispatcher.java:1414)
+	at com.ibm.ws.webcontainer.webapp.WebAppRequestDispatcher.forward(WebAppRequestDispatcher.java:171)
+	at com.ibm.ws.webcontainer.extension.DefaultExtensionProcessor.handleRequest(DefaultExtensionProcessor.java:790)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1156)
+	at com.ibm.ws.webcontainer.webapp.WebApp.handleRequest(WebApp.java:4962)
+	... 17 more
+
+[1/6/18 13:08:02:261 BRST] 0000002c com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0016I: Iniciando atualização de configuração do servidor.
+[1/6/18 13:08:02:280 BRST] 0000002c com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0017I: A configuração do servidor foi atualizada com sucesso em 0.021 segundos.
+[1/6/18 13:08:11:064 BRST] 0000000c com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0085I: O servidor myServer está parando porque a JVM está saindo.
+[1/6/18 13:08:11:067 BRST] 00000030 com.ibm.ws.runtime.update.internal.RuntimeUpdateManagerImpl  A CWWKE1100I: Aguardando até 30 segundos para o servidor ser colocado em modo quiesce.
+[1/6/18 13:08:11:072 BRST] 00000031 com.ibm.ws.tcpchannel.internal.TCPChannel                    I CWWKO0220I: O Canal TCP defaultHttpEndpoint interrompeu o atendimento das solicitações no host localhost  (IPv4: 127.0.0.1) porta 9080.
+[1/6/18 13:08:11:074 BRST] 00000031 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Aplicativo da Web removido (default_host): http://localhost:9080/helloworld/
+[1/6/18 13:08:11:077 BRST] 00000030 com.ibm.ws.runtime.update.internal.RuntimeUpdateManagerImpl  I CWWKE1101I: Colocação em modo quiesce do servidor concluída.
+[1/6/18 13:08:11:100 BRST] 00000025 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: O aplicativo helloworld foi interrompido com sucesso.
+[1/6/18 13:08:11:410 BRST] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0036I: O servidor myServer foi interrompido depois de 1 minutos, 30.433 segundos.

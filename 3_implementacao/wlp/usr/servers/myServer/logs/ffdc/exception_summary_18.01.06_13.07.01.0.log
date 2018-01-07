@@ -1,0 +1,6 @@
+
+ Index  Count  Time of first Occurrence    Time of last Occurrence     Exception SourceId ProbeId
+------+------+---------------------------+---------------------------+---------------------------
+     0      1    1/6/18 13:07:01:170 BRST    1/6/18 13:07:01:170 BRST java.lang.IllegalArgumentException com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters 1105
+                                                                            - /MRXFOCUS/PROJETOS/MRXFOCUS_SMARTHOUSE/smarthouse/3_implementacao/wlp/usr/servers/myServer/logs/ffdc/ffdc_18.01.06_13.07.01.0.log
+------+------+---------------------------+---------------------------+---------------------------

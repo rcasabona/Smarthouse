@@ -1,0 +1,6 @@
+
+ Index  Count  Time of first Occurrence    Time of last Occurrence     Exception SourceId ProbeId
+------+------+---------------------------+---------------------------+---------------------------
+     0      1    1/6/18 12:51:51:641 BRST    1/6/18 12:51:51:641 BRST java.net.UnknownHostException com.ibm.ws.transaction.services.TransactionManagerService$1 135
+                                                                            - /MRXFOCUS/PROJETOS/MRXFOCUS_SMARTHOUSE/smarthouse/3_implementacao/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_18.01.06_12.51.51.0.log
+------+------+---------------------------+---------------------------+---------------------------

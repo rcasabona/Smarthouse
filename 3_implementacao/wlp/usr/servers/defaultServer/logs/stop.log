@@ -1,0 +1,13 @@
+
+arg0=defaultServer
+arg1=--pid=
+arg2=--stop
+exit=1
+
+                 Java home:  /Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home/jre
+              Install root:  /MRXFOCUS/PROJETOS/MRXFOCUS_SMARTHOUSE/smarthouse/3_implementacao/wlp/
+          System libraries:  /MRXFOCUS/PROJETOS/MRXFOCUS_SMARTHOUSE/smarthouse/3_implementacao/wlp/lib/
+                 User root:  /MRXFOCUS/PROJETOS/MRXFOCUS_SMARTHOUSE/smarthouse/3_implementacao/wlp/usr/
+                    Config:  /MRXFOCUS/PROJETOS/MRXFOCUS_SMARTHOUSE/smarthouse/3_implementacao/wlp/usr/servers/defaultServer/
+                    Output:  /MRXFOCUS/PROJETOS/MRXFOCUS_SMARTHOUSE/smarthouse/3_implementacao/wlp/usr/servers/defaultServer/
+

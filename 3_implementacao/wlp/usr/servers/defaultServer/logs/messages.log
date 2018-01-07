@@ -1,0 +1,35 @@
+********************************************************************************
+product = WebSphere Application Server 17.0.0.4 (wlp-1.0.19.201712061531)
+wlp.install.dir = /MRXFOCUS/PROJETOS/MRXFOCUS_SMARTHOUSE/smarthouse/3_implementacao/wlp/
+java.home = /Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home/jre
+java.version = 1.7.0_79
+java.runtime = Java(TM) SE Runtime Environment (1.7.0_79-b15)
+os = Mac OS X (10.13.1; x86_64) (pt_BR)
+process = 36813@localhost
+********************************************************************************
+[1/6/18 12:51:37:735 BRST] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0001I: O servidor defaultServer foi ativado.
+[1/6/18 12:51:37:751 BRST] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0100I: Este produto é licenciado para uso de desenvolvimento e de produção limitada. Os termos de licença integrais podem ser visualizados aqui: https://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/license/base_ilan/ilan/17.0.0.4/lafiles/pt.html
+[1/6/18 12:51:39:311 BRST] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           I CWWKE0002I: O kernel foi iniciado após 6.888 segundos
+[1/6/18 12:51:39:393 BRST] 00000017 com.ibm.ws.kernel.feature.internal.FeatureManager            I CWWKF0007I: Atualização do recurso iniciada.
+[1/6/18 12:51:45:118 BRST] 0000000f com.ibm.ws.security.ready.internal.SecurityReadyServiceImpl  I CWWKS0007I: O serviço de segurança está iniciando...
+[1/6/18 12:51:46:009 BRST] 0000000f com.ibm.ws.app.manager.internal.monitor.DropinMonitor        A CWWKZ0058I: Monitorando dropins para aplicativos. 
+[1/6/18 12:51:46:300 BRST] 0000001e com.ibm.ws.tcpchannel.internal.TCPChannel                    I CWWKO0219I: O Canal TCP defaultHttpEndpoint foi iniciado e agora está atendendo solicitações no host localhost  (IPv4: 127.0.0.1) porta 9080.
+[1/6/18 12:51:51:659 BRST] 0000000f com.ibm.ws.logging.internal.impl.IncidentImpl                I FFDC1015I: Um Incidente de FFDC foi criado: "java.net.UnknownHostException: MacBook-Pro-de-Rafael.local: MacBook-Pro-de-Rafael.local: nodename nor servname provided, or not known com.ibm.ws.transaction.services.TransactionManagerService$1 135" em ffdc_18.01.06_12.51.51.0.log
+[1/6/18 12:51:52:271 BRST] 00000018 com.ibm.ws.security.token.ltpa.internal.LTPAKeyInfoManager   I CWWKS4103I: Criando as chaves LTPA. Isso pode levar alguns segundos.
+[1/6/18 12:51:52:324 BRST] 0000000f ibm.ws.security.authentication.internal.jaas.JAASServiceImpl I CWWKS1123I:  O plug-in de autenticação coletivo com o nome de classe NullCollectiveAuthenticationPlugin foi ativado. 
+[1/6/18 12:51:53:162 BRST] 0000000f com.ibm.ws.cache.ServerCache                                 I DYNA1001I: A instância de Cache Dinâmico do WebSphere denominada baseCache foi inicializada com êxito.
+[1/6/18 12:51:53:165 BRST] 0000000f com.ibm.ws.cache.ServerCache                                 I DYNA1071I: O provedor de cache default está sendo usado.
+[1/6/18 12:51:53:166 BRST] 0000000f com.ibm.ws.cache.CacheServiceImpl                            I DYNA1056I: Cache Dinâmico (cache de objeto) inicializado com êxito.
+[1/6/18 12:51:53:883 BRST] 00000017 com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0012I: O servidor instalou os recursos a seguir: [webProfile-7.0, json-1.0, jaxrs-2.0, appSecurity-2.0, jpa-2.1, cdi-1.2, jaxrsClient-2.0, distributedMap-1.0, websocket-1.1, el-3.0, ssl-1.0, jdbc-4.1, beanValidation-1.1, managedBeans-1.0, jpaContainer-2.1, servlet-3.1, jsf-2.2, jsp-2.3, jndi-1.0, jsonp-1.0, ejbLite-3.2].
+[1/6/18 12:51:53:885 BRST] 00000017 com.ibm.ws.kernel.feature.internal.FeatureManager            I CWWKF0008I: Atualização do recurso concluída em 14.577 segundos.
+[1/6/18 12:51:53:885 BRST] 00000017 com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0011I: O servidor defaultServer está pronto para executar um planeta mais inteligente.
+[1/6/18 12:51:58:405 BRST] 00000018 com.ibm.ws.security.token.ltpa.internal.LTPAKeyInfoManager   A CWWKS4104A: Chaves LTPA criadas em 6.134 segundos. Arquivo-chave LTPA: /MRXFOCUS/PROJETOS/MRXFOCUS_SMARTHOUSE/smarthouse/3_implementacao/wlp/usr/servers/defaultServer/resources/security/ltpa.keys
+[1/6/18 12:51:58:410 BRST] 00000018 com.ibm.ws.security.token.ltpa.internal.LTPAKeyCreateTask    I CWWKS4105I: A configuração de LTPA fica pronta após 6.148 segundos.
+[1/6/18 12:52:52:233 BRST] 0000002a com.ibm.ws.ssl.internal.SSLConfigValidator                   A CWPKI0817A: A configuração SSL padrão espera um elemento <keyStore> com um valor de ID de defaultKeyStore e uma senha. O elemento defaultKeyStore <keyStore> está ausente ou a senha não está especificada. Defina o elemento ausente: <keyStore id="defaultKeyStore" password="yourpassword" /> ou mude a configuração SSL padrão para usar um keystore existente.  Consulte o exemplo a seguir: <ssl id="defaultSSLConfig" keyStoreRef="newKeyStore" />.
+[1/6/18 12:58:24:611 BRST] 0000000d com.ibm.ws.kernel.launch.internal.ServerCommandListener      A CWWKE0055I: Encerramento do servidor solicitado em Saturday, January 6, 2018 às 12:58 PM. O servidor defaultServer está sendo encerrado.
+[1/6/18 12:58:24:616 BRST] 000000a9 com.ibm.ws.runtime.update.internal.RuntimeUpdateManagerImpl  A CWWKE1100I: Aguardando até 30 segundos para o servidor ser colocado em modo quiesce.
+[1/6/18 12:58:24:620 BRST] 000000aa com.ibm.ws.tcpchannel.internal.TCPChannel                    I CWWKO0220I: O Canal TCP defaultHttpEndpoint interrompeu o atendimento das solicitações no host localhost  (IPv4: 127.0.0.1) porta 9080.
+[1/6/18 12:58:24:623 BRST] 000000a9 com.ibm.ws.runtime.update.internal.RuntimeUpdateManagerImpl  I CWWKE1101I: Colocação em modo quiesce do servidor concluída.
+[1/6/18 12:58:24:911 BRST] 000000a9 com.ibm.ws.security.ready.internal.SecurityReadyServiceImpl  I CWWKS0009I: O serviço de segurança parou.
+[1/6/18 12:58:24:926 BRST] 000000a9 ibm.ws.security.authentication.internal.jaas.JAASServiceImpl I CWWKS1124I:  O plug-in de autenticação coletivo com o nome de classe NullCollectiveAuthenticationPlugin foi desativado. 
+[1/6/18 12:58:25:436 BRST] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0036I: O servidor defaultServer foi interrompido depois de 6 minutos, 53.015 segundos.

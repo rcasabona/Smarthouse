@@ -1,0 +1,13 @@
+objc[36813]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home//jre/bin/java (0x1044fc4c0) and /Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home/jre/lib/libinstrument.dylib (0x1045ed4e0). One of the two will be used. Which one is undefined.
+Servidor defaultServer criado.
+Ativando defaultServer (WebSphere Application Server 17.0.0.4/wlp-1.0.19.201712061531) em Java HotSpot(TM) 64-Bit Server VM, versão 1.7.0_79-b15 (pt_BR)
+[AUDIT   ] CWWKE0001I: O servidor defaultServer foi ativado.
+[AUDIT   ] CWWKE0100I: Este produto é licenciado para uso de desenvolvimento e de produção limitada. Os termos de licença integrais podem ser visualizados aqui: https://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/license/base_ilan/ilan/17.0.0.4/lafiles/pt.html
+[AUDIT   ] CWWKZ0058I: Monitorando dropins para aplicativos. 
+[AUDIT   ] CWWKF0012I: O servidor instalou os recursos a seguir: [webProfile-7.0, json-1.0, jaxrs-2.0, appSecurity-2.0, jpa-2.1, cdi-1.2, jaxrsClient-2.0, distributedMap-1.0, websocket-1.1, el-3.0, ssl-1.0, jdbc-4.1, beanValidation-1.1, managedBeans-1.0, jpaContainer-2.1, servlet-3.1, jsf-2.2, jsp-2.3, jndi-1.0, jsonp-1.0, ejbLite-3.2].
+[AUDIT   ] CWWKF0011I: O servidor defaultServer está pronto para executar um planeta mais inteligente.
+[AUDIT   ] CWWKS4104A: Chaves LTPA criadas em 6.134 segundos. Arquivo-chave LTPA: /MRXFOCUS/PROJETOS/MRXFOCUS_SMARTHOUSE/smarthouse/3_implementacao/wlp/usr/servers/defaultServer/resources/security/ltpa.keys
+[AUDIT   ] CWPKI0817A: A configuração SSL padrão espera um elemento <keyStore> com um valor de ID de defaultKeyStore e uma senha. O elemento defaultKeyStore <keyStore> está ausente ou a senha não está especificada. Defina o elemento ausente: <keyStore id="defaultKeyStore" password="yourpassword" /> ou mude a configuração SSL padrão para usar um keystore existente.  Consulte o exemplo a seguir: <ssl id="defaultSSLConfig" keyStoreRef="newKeyStore" />.
+[AUDIT   ] CWWKE0055I: Encerramento do servidor solicitado em Saturday, January 6, 2018 às 12:58 PM. O servidor defaultServer está sendo encerrado.
+[AUDIT   ] CWWKE1100I: Aguardando até 30 segundos para o servidor ser colocado em modo quiesce.
+[AUDIT   ] CWWKE0036I: O servidor defaultServer foi interrompido depois de 6 minutos, 53.015 segundos.
