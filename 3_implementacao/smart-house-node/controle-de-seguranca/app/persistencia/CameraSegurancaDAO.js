@@ -22,12 +22,12 @@ function CameraSegurancaDAO(pool) {
     this._pool = pool;
 }
 
-CameraSegurancaDAO.prototype.salva = function(pagamento,callback) {
-    this._pool.query('INSERT INTO camera SET ?', pagamento, callback);
+CameraSegurancaDAO.prototype.salva = function(camera,callback) {
+    this._pool.query('INSERT INTO camera SET ?', camera, callback);
 }
 
 CameraSegurancaDAO.prototype.buscaPorId = function (id,callback) {
-    this._pool.query("select * from pagamentos where id = ?",[id],callback);
+    this._pool.query("select * from camera where id = ?",[id],callback);
 }
 
 module.exports = function(){

@@ -4,10 +4,28 @@ module.exports = function(app){
         camera.nome =  "camera";
         camera.descricao = "camera de seguranca";
 
+        /* TESTE */
+        var pool = app.persistencia.pool;
+        var cameraDAO = new app.persistenci.CameraDAO(pool);
+        
+        cameraDAO.salva(camera, function(exception, result) {
+            console.log('persistido:' + result);
+        });
+        
+
+
+
         res.send(camera);
     });
 
     app.post('/cameras/camera', function(req, res) {
+        var pool = app.persistencia.pool;
+        var cameraDAO = new app.persistenci.CameraDAO(pool);
+        
+        cameraDAO.salva(camera, function(exception, result) {
+            console.log('persistido:' + result);
+        });
+
         /*
         var connection = app.persistencia.connectionFactory();
         var pagamentoDao = new app.persistencia.PagamentoDao(connection);
