@@ -6,7 +6,7 @@ module.exports = function(app){
 
         /* TESTE */
         var pool = app.persistencia.pool;
-        var cameraDAO = new app.persistenci.CameraDAO(pool);
+        var cameraDAO = new app.persistencia.CameraDAO(pool);
         
         cameraDAO.salva(camera, function(exception, result) {
             console.log('persistido:' + result);
@@ -20,7 +20,7 @@ module.exports = function(app){
 
     app.post('/cameras/camera', function(req, res) {
         var pool = app.persistencia.pool;
-        var cameraDAO = new app.persistenci.CameraDAO(pool);
+        var cameraDAO = new app.persistencia.CameraDAO(pool);
         
         cameraDAO.salva(camera, function(exception, result) {
             console.log('persistido:' + result);
