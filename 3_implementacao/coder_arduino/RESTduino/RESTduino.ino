@@ -168,14 +168,14 @@ void loop()
 
               if(strncmp(value, "HIGH", 4) == 0){
 #if DEBUG
-                Serial.println("HIGH");
+                Serial.println("HIGH 1");
 #endif
                 digitalWrite(selectedPin, HIGH);
               }
 
               if(strncmp(value, "LOW", 3) == 0){
 #if DEBUG
-                Serial.println("LOW");
+                Serial.println("LOW 1");
 #endif
                 digitalWrite(selectedPin, LOW);
               }
