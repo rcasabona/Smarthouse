@@ -10,9 +10,11 @@ module.exports = function(){
 
   // set the view engine to ejs
   app.set('view engine', 'ejs');
+  app.set('views', './app/views');
 
   consign()
-   .include('controllers')
+   .include('./app/controllers')
+   .then('./app/persistencia')
    .into(app);
 
   return app;
