@@ -21,6 +21,6 @@ sudo chmod go+rwx /var/lock
 https://github.com/bblanchon/ArduinoJson
 
 ## Descrição do projeto
-O projeto é básiado em micro-serviços, as aplicações se comunicam através do protocolo HTTP, REST. O projeto smarthouse-multimodele mapeia todos os projetos que utilizam o projeto model-module. O projeto model-module contém as entitys comuns a todos os projetos.
+O projeto é baseado em micro-serviços, as aplicações se comunicam através do protocolo HTTP, REST. O projeto smarthouse-multimodele mapeia todos os projetos que utilizam o projeto model-module. O projeto model-module contém as entitys comuns a todos os projetos.
 
 O projeto core-arduino contem a chamada ao Arduino, então todos os projetos deverão acessar compenentes internos do Arduino através do core-arduino.
