@@ -4,13 +4,13 @@ module.exports = function(app){
         camera.nome =  "camera";
         camera.descricao = "camera de seguranca";
 
-        /* TESTE */
-        var pool = app.persistencia.pool;
-        var cameraDAO = new app.persistencia.CameraDAO(pool);
+        // /* TESTE */
+        // var pool = app.persistencia.pool;
+        // var cameraDAO = new app.persistencia.CameraDAO(pool);
         
-        cameraDAO.salva(camera, function(exception, result) {
-            console.log('persistido:' + result);
-        });
+        // cameraDAO.salva(camera, function(exception, result) {
+        //     console.log('persistido:' + result);
+        // });
         
 
 
