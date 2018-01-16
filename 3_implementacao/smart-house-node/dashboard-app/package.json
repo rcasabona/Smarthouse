@@ -11,7 +11,7 @@
   "engines": {
     "node": ">=6.x"
   },
-  "author": "dayone.pl",
+  "author": "Rafael Casabona",
   "license": "MIT",
   "devDependencies": {
     "cross-env": "5.0.0",
