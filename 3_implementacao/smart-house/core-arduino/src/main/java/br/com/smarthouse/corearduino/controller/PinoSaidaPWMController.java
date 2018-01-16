@@ -13,7 +13,7 @@ import org.springframework.web.client.RestTemplate;
 import br.com.smarthouse.corearduino.business.PinoSaidaPWMService;
 import br.com.smarthouse.corearduino.util.BasePropertiesUtil;
 import br.com.smarthouse.corearduino.vo.AcaoRetorno;
-import br.com.smarthouse.corearduino.vo.LigarDesligar;
+import br.com.smarthouse.modelgenerics.vo.LigarDesligar;
 
 /**
  * Controller que lida com acões nas entradas PWS do Arduino

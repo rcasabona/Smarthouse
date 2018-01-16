@@ -1,4 +1,4 @@
-package br.com.smarthouse.corearduino.vo;
+package br.com.smarthouse.modelgenerics.vo;
 
 /**
  * Enum que representa um pino ligado ou desligado

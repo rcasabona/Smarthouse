@@ -1,4 +1,4 @@
-package br.com.smarthouse.modelgenerics.dto;
+package br.com.smarthouse.modelgenerics.vo;
 
 public class LeituraAmbienteDTO {
 	

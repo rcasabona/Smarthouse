@@ -26,6 +26,7 @@
       <module>controle-climatico</module>
       <module>model-module</module>
       <module>core-arduino</module>
+      <module>controle-de-luzes</module>
     </modules>
 
     <dependencies>
