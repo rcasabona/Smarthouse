@@ -29,7 +29,7 @@ public class PinoSaidaPWMController {
 	@Autowired
 	private PinoSaidaPWMService pinoSaidaPWMService;
 
-	@RequestMapping(value = "/ligar/{porta}/", method = RequestMethod.GET, produces = "application/json")
+	@RequestMapping(value = "/ligar/porta/{porta}/", method = RequestMethod.GET, produces = "application/json")
 	public @ResponseBody AcaoRetorno ligar(@PathVariable("porta") String porta) {
 		final AcaoRetorno retorno = verificaSePortaExiste(porta);
 		// trata chamada ao Arduino
@@ -44,7 +44,7 @@ public class PinoSaidaPWMController {
 		return retorno;
 	}
 
-	@RequestMapping(value = "/desligar/{porta}/", method = RequestMethod.GET, produces = "application/json")
+	@RequestMapping(value = "/desligar/porta/{porta}/", method = RequestMethod.GET, produces = "application/json")
 	public @ResponseBody AcaoRetorno desligar(@PathVariable("porta") String porta) {
 		final AcaoRetorno retorno = verificaSePortaExiste(porta);
 		// trata chamada ao Arduino
