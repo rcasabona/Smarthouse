@@ -16,7 +16,7 @@ import br.com.smarthouse.controleclimatico.business.TemperaturaAmbienteService;
 import br.com.smarthouse.controleclimatico.model.QualidadeDoAr;
 import br.com.smarthouse.controleclimatico.model.TemperaturaAmbiente;
 import br.com.smarthouse.controleclimatico.model.TipoTemperatura;
-import br.com.smarthouse.modelgenerics.dto.LeituraAmbienteDTO;
+import br.com.smarthouse.modelgenerics.vo.LeituraAmbienteDTO;
 
 @Controller
 @RequestMapping("/temperaturaAmbiente")
