@@ -6,7 +6,10 @@ const db = require('./db')
 const port = process.env.PORT || 9000
 const app = express()
 
-require('./config/passport')(passport, db)
+// persistence
+require('./app/persistence/passport')(passport, db)
+
+// config
 require('./config/express')(app, passport, db.pool)
 require('./config/routes')(app, passport, db)
 

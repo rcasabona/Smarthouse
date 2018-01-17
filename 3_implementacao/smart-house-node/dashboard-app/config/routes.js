@@ -1,8 +1,8 @@
 const winston = require('winston')
 const { requiresLogin, requiresAdmin } = require('./middlewares/authorization')
-const admin = require('../app/admin')
-const users = require('../app/users')
-const monitoring = require('../app/monitoring')
+const admin = require('../app/service/admin')
+const users = require('../app/service/users')
+const monitoring = require('../app/service/monitoring')
 
 module.exports = (app, passport, db) => {
 	app.post('/api/login', passport.authenticate('local'), users.login)
