@@ -12,6 +12,11 @@ module.exports = (app, passport, db) => {
 	app.get('/admin/login', admin.renderLogin)
 	app.post('/admin/login', passport.authenticate('local', { failureRedirect: '/admin/login' }), admin.login)
 	app.get('/admin/panel', requiresAdmin, admin.renderPanel)
+	// Ambientes
+	app.get('/admin/ambientes', requiresAdmin, admin.renderAmbiente)
+	app.get('/admin/ambientes/controle-da-sala', requiresAdmin, admin.renderAmbienteControleSala)
+	// Reports
+	app.get('/admin/reports', requiresAdmin, admin.renderReports)
 
 	app.get('/health', monitoring.health(db))
 

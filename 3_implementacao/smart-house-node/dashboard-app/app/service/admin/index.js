@@ -13,5 +13,17 @@ module.exports = {
 
 	renderPanel: (req, res) => {
 		res.render('admin-panel')
+	},
+
+	renderAmbiente: (req, res) => {
+		res.render('ambientes')
+	},
+
+	renderReports: (req, res) => {
+		res.render('reports')
+	},
+
+	renderAmbienteControleSala: (req, res) => {
+		res.render('controle-sala')
 	}
 }

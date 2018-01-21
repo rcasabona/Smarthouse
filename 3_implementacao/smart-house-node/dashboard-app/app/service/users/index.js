@@ -11,7 +11,8 @@ module.exports = {
 
 			req.logout()
 
-			res.sendStatus(200)
+			res.redirect('/admin/login')
+			// res.sendStatus(200)
 		})
 	},
 

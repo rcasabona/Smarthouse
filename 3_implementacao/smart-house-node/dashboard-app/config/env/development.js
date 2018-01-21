@@ -1,7 +1,7 @@
 module.exports = {
 	db: {
 		user: 'postgres',
-		password: 'webadidas1986',
+		password: 'mapua549',
 		database: 'dashboard',
 		host: 'localhost',
 		port: 5432,
