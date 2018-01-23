@@ -3,6 +3,7 @@ const { requiresLogin, requiresAdmin } = require('./middlewares/authorization')
 const admin = require('../app/service/admin')
 const users = require('../app/service/users')
 const monitoring = require('../app/service/monitoring')
+const luzes = require('../app/service/luzes')
 
 module.exports = (app, passport, db) => {
 	app.post('/api/login', passport.authenticate('local'), users.login)
@@ -17,6 +18,10 @@ module.exports = (app, passport, db) => {
 	app.get('/admin/ambientes/controle-da-sala', requiresAdmin, admin.renderAmbienteControleSala)
 	// Reports
 	app.get('/admin/reports', requiresAdmin, admin.renderReports)
+
+	// Luzes
+	app.get('/luz/acenderApagar', requiresAdmin, luzes.acenderApagar);
+
 
 	app.get('/health', monitoring.health(db))
 
