@@ -6,19 +6,26 @@ module.exports = {
         // configurações da requisição
         var configuracoes = {
             hostname: 'localhost',
-            port: 3000,
-            path: '/produtos/json',
+            port: 9090,
+            path: '/controle-de-luzes/luzes/',
             headers: {
                 'Accept': 'application/json'
             }
         };
 
-        http.get(configuracoes, function (res) {
+        var client = http.get(configuracoes, function(res) {
             console.log(res.statusCode);
-            res.on('data', function (body) {
+            res.on('data', function(body) {
                 console.log('Corpo: ' + body);
             });
         });
+
+        var retorno = {
+            status : 200,
+            retorno : "DESLIGAR"
+        }
+
+        client.end(JSON.stringify(retorno));
     },
 
     statusDaLuz: (req, res) => {

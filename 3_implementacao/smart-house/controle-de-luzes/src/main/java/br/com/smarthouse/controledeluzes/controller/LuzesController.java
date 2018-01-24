@@ -16,5 +16,10 @@ public class LuzesController {
 	public @ResponseBody LigarDesligar desligar(@PathVariable("rele") String porta) {
 		return LigarDesligar.DESLIGAR;
 	}
+	
+	@RequestMapping(value = "/", method = RequestMethod.GET, produces = "application/json")
+	public @ResponseBody LigarDesligar luzesTeste() {
+		return LigarDesligar.DESLIGAR;
+	}
 
 }
