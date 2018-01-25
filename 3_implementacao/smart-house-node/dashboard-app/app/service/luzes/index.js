@@ -9,23 +9,26 @@ module.exports = {
             port: 9090,
             path: '/controle-de-luzes/luzes/',
             headers: {
-                'Accept': 'application/json'
+                'Accept': 'application/json',
+                'Content-type': 'application/json'
             }
         };
 
-        var client = http.get(configuracoes, function(res) {
+        var client = http.get(configuracoes, function (res) {
             console.log(res.statusCode);
-            res.on('data', function(body) {
+            res.on('data', function (body) {
                 console.log('Corpo: ' + body);
             });
         });
 
         var retorno = {
-            status : 200,
-            retorno : "DESLIGAR"
+            status: 200,
+            retorno: "DESLIGAR"
         }
 
-        client.end(JSON.stringify(retorno));
+        // client.end(JSON.stringify(retorno));
+        // res.render();
+        res.send(retorno);
     },
 
     statusDaLuz: (req, res) => {
