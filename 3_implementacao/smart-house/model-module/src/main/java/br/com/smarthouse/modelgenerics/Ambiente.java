@@ -39,10 +39,6 @@ public class Ambiente implements Serializable {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "ID_USARIO")
 	private Usuario usuario;
-	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "ID_IMOVEL")
-	private Imovel imovel;
 
 	@Enumerated(EnumType.STRING)
 	@Column(name = "TIPO_AMBIENTE")
