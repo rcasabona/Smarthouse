@@ -17,7 +17,7 @@ import br.com.smarthouse.modelgenerics.vo.LigarDesligar;
 public class LuzesController {
 	
 	@RequestMapping(value = "/desligar/{rele}", method = RequestMethod.GET, produces = "application/json")
-	public @ResponseBody LigarDesligar desligar(@PathVariable("rele") String porta) {
+	public @ResponseBody LigarDesligar desligar(final @PathVariable("rele") String porta) {
 		return LigarDesligar.DESLIGAR;
 	}
 	
@@ -29,8 +29,8 @@ public class LuzesController {
 //		return status;
 //	}
 	
-	@RequestMapping(value = "/", method = RequestMethod.GET, produces = "application/json")
-	public @ResponseBody List<Luz> list() {
+	@RequestMapping(value = "/{ambiente}/", method = RequestMethod.GET, produces = "application/json")
+	public @ResponseBody List<Luz> list(final @PathVariable("ambiente") int ambiente) {
 		return montaListaDeLuzes();
 	}
 	

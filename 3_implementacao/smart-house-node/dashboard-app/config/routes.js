@@ -21,6 +21,7 @@ module.exports = (app, passport, db) => {
 
 	// Luzes
 	app.get('/luz/acenderApagar', requiresAdmin, luzes.acenderApagar);
+	app.get('/luzes/', requiresAdmin, luzes.listarLuzes);
 
 
 	app.get('/health', monitoring.health(db))
