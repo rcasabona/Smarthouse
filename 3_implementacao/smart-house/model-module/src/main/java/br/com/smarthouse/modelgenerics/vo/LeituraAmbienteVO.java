@@ -1,10 +1,10 @@
 package br.com.smarthouse.modelgenerics.vo;
 
-public class LeituraAmbienteDTO {
+public class LeituraAmbienteVO {
 	
-	public LeituraAmbienteDTO() {}
+	public LeituraAmbienteVO() {}
 	
-	public LeituraAmbienteDTO(final Double _ambiente, final Double _temperatura) {
+	public LeituraAmbienteVO(final Double _ambiente, final Double _temperatura) {
 		this.ambiente = _ambiente;
 		this.temperatura = _temperatura;
 	}

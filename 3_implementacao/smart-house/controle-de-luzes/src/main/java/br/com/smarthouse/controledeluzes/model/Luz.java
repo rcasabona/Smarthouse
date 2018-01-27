@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+<<<<<<< HEAD
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -40,6 +41,26 @@ public class Luz implements Serializable {
 	@JoinColumn(name = "ID_AMBIENTE")
 	private Ambiente ambiente;
 
+=======
+import javax.persistence.Id;
+
+@Entity
+public class Luz implements Serializable {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 9001960933781980084L;
+
+	@Id
+	private Long id;
+	
+	@Column
+	private String nome;
+	
+	private String ambiente;
+	
+>>>>>>> a568a6a14430dcd923bdfbc174d8d946308a1d57
 	public Long getId() {
 		return id;
 	}
@@ -56,6 +77,7 @@ public class Luz implements Serializable {
 		this.nome = nome;
 	}
 
+<<<<<<< HEAD
 	public int getPorta() {
 		return porta;
 	}
@@ -69,6 +91,13 @@ public class Luz implements Serializable {
 	}
 
 	public void setAmbiente(Ambiente ambiente) {
+=======
+	public String getAmbiente() {
+		return ambiente;
+	}
+
+	public void setAmbiente(String ambiente) {
+>>>>>>> a568a6a14430dcd923bdfbc174d8d946308a1d57
 		this.ambiente = ambiente;
 	}
 

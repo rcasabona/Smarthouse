@@ -16,7 +16,7 @@ import br.com.smarthouse.controleclimatico.business.TemperaturaAmbienteService;
 import br.com.smarthouse.controleclimatico.model.QualidadeDoAr;
 import br.com.smarthouse.controleclimatico.model.TemperaturaAmbiente;
 import br.com.smarthouse.controleclimatico.model.TipoTemperatura;
-import br.com.smarthouse.modelgenerics.vo.LeituraAmbienteDTO;
+import br.com.smarthouse.modelgenerics.vo.LeituraAmbienteVO;
 
 @Controller
 @RequestMapping("/temperaturaAmbiente")
@@ -67,8 +67,8 @@ public class TemperaturaAmbienteController {
 					
 					if (json != null) {
 						XStream xstream = new XStream(new JettisonMappedXmlDriver());
-						xstream.alias("jsonLeituraAmbiente", LeituraAmbienteDTO.class);
-						LeituraAmbienteDTO leituraAmbienteDTO = (LeituraAmbienteDTO) xstream.fromXML(json);
+						xstream.alias("jsonLeituraAmbiente", LeituraAmbienteVO.class);
+						LeituraAmbienteVO leituraAmbienteDTO = (LeituraAmbienteVO) xstream.fromXML(json);
 						
 						System.out.println(leituraAmbienteDTO);
 					}
