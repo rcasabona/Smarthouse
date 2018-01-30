@@ -6,3 +6,4 @@ insert into  sub_ambiente (id_subambiente, tipo_ambiente, id_ambiente) values (1
 
 select * from luz;
 insert into  luz (id_luz, nome, porta, id_subambiente) values (1, 'luz teste', 1, 1);
+insert into  luz (id_luz, nome, porta, id_subambiente) values (2, 'luz teste 2', 1, 1);
