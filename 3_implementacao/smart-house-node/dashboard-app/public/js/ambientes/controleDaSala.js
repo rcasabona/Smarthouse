@@ -48,5 +48,5 @@ $(document).ready(function () {
         var porta = $(this).attr("data-porta");
         ligaDesliga(porta);
     });
-    listControlerAmbiente(AMBIENTE_SALA);
+    // listControlerAmbiente(AMBIENTE_SALA);
 });

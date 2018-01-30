@@ -4,6 +4,7 @@ const admin = require('../app/service/admin')
 const users = require('../app/service/users')
 const monitoring = require('../app/service/monitoring')
 const luzes = require('../app/service/luzes')
+const ambientes = require('../app/service/ambientes')
 
 module.exports = (app, passport, db) => {
 	app.post('/api/login', passport.authenticate('local'), users.login)
@@ -14,14 +15,14 @@ module.exports = (app, passport, db) => {
 	app.post('/admin/login', passport.authenticate('local', { failureRedirect: '/admin/login' }), admin.login)
 	app.get('/admin/panel', requiresAdmin, admin.renderPanel)
 	// Ambientes
-	app.get('/admin/ambientes', requiresAdmin, admin.renderAmbiente)
-	app.get('/admin/ambientes/controle-da-sala', requiresAdmin, admin.renderAmbienteControleSala)
+	app.get('/admin/ambientes', requiresAdmin, ambientes.renderAmbientes)
+	app.get('/admin/ambientes/ambiente/:idAmbiente', requiresAdmin, ambientes.renderAmbiente)
 	// Reports
 	app.get('/admin/reports', requiresAdmin, admin.renderReports)
 
 	// Luzes
 	app.get('/luz/acenderApagar', requiresAdmin, luzes.acenderApagar);
-	app.get('/luzes/', requiresAdmin, luzes.listarLuzes);
+	// app.get('/luzes/', requiresAdmin, luzes.listarLuzes);
 
 
 	app.get('/health', monitoring.health(db))

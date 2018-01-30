@@ -1,4 +1,4 @@
-package br.com.smarthouse.modelgenerics;
+package br.com.smarthouse.controledeluzes.model;
 
 import java.io.Serializable;
 import java.util.List;

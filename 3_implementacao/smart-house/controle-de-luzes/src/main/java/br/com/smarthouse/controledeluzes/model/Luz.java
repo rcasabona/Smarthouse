@@ -4,13 +4,13 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
-import br.com.smarthouse.modelgenerics.Ambiente;
 
 /**
  * Entity que modela as luzes.
@@ -39,6 +39,10 @@ public class Luz implements Serializable {
 	
 	@JoinColumn(name = "ID_AMBIENTE")
 	private Ambiente ambiente;
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "ID_SUBAMBIENTE")
+	private SubAmbiente subAmbiente;
 
 	public Long getId() {
 		return id;
@@ -70,6 +74,14 @@ public class Luz implements Serializable {
 
 	public void setAmbiente(Ambiente ambiente) {
 		this.ambiente = ambiente;
+	}
+	
+	public SubAmbiente getSubAmbiente() {
+		return subAmbiente;
+	}
+
+	public void setSubAmbiente(SubAmbiente subAmbiente) {
+		this.subAmbiente = subAmbiente;
 	}
 
 }
