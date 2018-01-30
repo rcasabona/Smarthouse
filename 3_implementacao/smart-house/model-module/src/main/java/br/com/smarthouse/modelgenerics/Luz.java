@@ -1,4 +1,4 @@
-package br.com.smarthouse.controledeluzes.model;
+package br.com.smarthouse.modelgenerics;
 
 import java.io.Serializable;
 
@@ -36,10 +36,6 @@ public class Luz implements Serializable {
 	
 	@Column(name = "PORTA")
 	private int porta;
-	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "ID_SUBAMBIENTE")
-	private SubAmbiente subAmbiente;
 
 	public Long getId() {
 		return id;
@@ -63,14 +59,6 @@ public class Luz implements Serializable {
 
 	public void setPorta(int porta) {
 		this.porta = porta;
-	}
-
-	public SubAmbiente getSubAmbiente() {
-		return subAmbiente;
-	}
-
-	public void setSubAmbiente(SubAmbiente subAmbiente) {
-		this.subAmbiente = subAmbiente;
 	}
 
 }

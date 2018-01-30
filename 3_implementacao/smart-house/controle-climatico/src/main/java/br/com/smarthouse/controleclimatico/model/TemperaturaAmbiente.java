@@ -16,7 +16,7 @@ import javax.persistence.Table;
 import br.com.smarthouse.modelgenerics.Ambiente;
 
 /**
- * Entity que modela a Temperatue do Ambiente.
+ * Entity que modela a Temperatura do Ambiente.
  * 
  * @author Rafael Casabona
  *
