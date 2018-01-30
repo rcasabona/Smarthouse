@@ -17,11 +17,10 @@ import br.com.smarthouse.modelgenerics.vo.LigarDesligar;
 public class LuzesController {
 	
 	@RequestMapping(value = "/desligar/{rele}", method = RequestMethod.GET, produces = "application/json")
-	public @ResponseBody LigarDesligar desligar(final @PathVariable("rele") String porta) {
+	public @ResponseBody LigarDesligar desligar(@PathVariable("rele") String porta) {
 		return LigarDesligar.DESLIGAR;
 	}
 	
-<<<<<<< HEAD
 	@RequestMapping(method = RequestMethod.GET, produces = "application/json")
 	public @ResponseBody List<Luz> listaLuzes() {
 		return montaRetornoLuzes();
@@ -41,29 +40,6 @@ public class LuzesController {
 		luz2.setNome("Sanca 2");
 		luz2.setPorta(2);
 		luzes.add(luz2);
-=======
-//	@RequestMapping(value = "/", method = RequestMethod.GET, produces = "application/json")
-//	public @ResponseBody StatusObjetoVO luzesTeste() {
-//		final StatusObjetoVO status = new StatusObjetoVO();
-//		status.setEstado(LigarDesligar.DESLIGAR);
-//		status.setPino(13);
-//		return status;
-//	}
-	
-	@RequestMapping(value = "/{ambiente}/", method = RequestMethod.GET, produces = "application/json")
-	public @ResponseBody List<Luz> list(final @PathVariable("ambiente") int ambiente) {
-		return montaListaDeLuzes();
-	}
-	
-	private List<Luz> montaListaDeLuzes() {
-		List<Luz> luzes = new ArrayList<Luz>();
-		
-		Luz luz1 = new Luz();
-		luz1.setAmbiente("sala");
-		luz1.setId(1L);
-		luz1.setNome("Sanca 1");
-		luzes.add(luz1 );
->>>>>>> a568a6a14430dcd923bdfbc174d8d946308a1d57
 		
 		return luzes;
 	}
