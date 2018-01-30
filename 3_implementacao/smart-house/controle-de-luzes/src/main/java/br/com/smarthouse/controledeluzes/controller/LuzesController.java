@@ -42,6 +42,8 @@ public class LuzesController {
 		luz2.setNome("Sanca 2");
 		luz2.setPorta(2);
 		luzes.add(luz2);
+		
+		return luzes;
 	}
 	
 	@RequestMapping(value = "/{ambiente}/", method = RequestMethod.GET, produces = "application/json")

@@ -12,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 /**
  * Entity que modela as luzes.
  * @author Rafael Casabona
@@ -36,10 +38,8 @@ public class Luz implements Serializable {
 	
 	@Column(name = "PORTA")
 	private int porta;
-	
-	@JoinColumn(name = "ID_AMBIENTE")
-	private Ambiente ambiente;
 
+	@JsonIgnore
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "ID_SUBAMBIENTE")
 	private SubAmbiente subAmbiente;
@@ -66,14 +66,6 @@ public class Luz implements Serializable {
 
 	public void setPorta(int porta) {
 		this.porta = porta;
-	}
-
-	public Ambiente getAmbiente() {
-		return ambiente;
-	}
-
-	public void setAmbiente(Ambiente ambiente) {
-		this.ambiente = ambiente;
 	}
 	
 	public SubAmbiente getSubAmbiente() {

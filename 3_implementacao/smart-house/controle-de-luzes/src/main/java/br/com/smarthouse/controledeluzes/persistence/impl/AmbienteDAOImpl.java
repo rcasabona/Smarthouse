@@ -7,5 +7,4 @@ import br.com.smarthouse.controledeluzes.persistence.AmbienteDAO;
 @Resource
 public abstract class AmbienteDAOImpl implements AmbienteDAO {
 	
-	
 }
