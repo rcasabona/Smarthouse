@@ -49,7 +49,7 @@ public class SubAmbiente implements Serializable {
 	private Ambiente ambiente;
 	
 	@OneToMany(mappedBy = "subAmbiente", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-	private List<Luz> luzes;
+	private List<Objeto> objetos;
 
 	public Long getId() {
 		return id;
@@ -79,12 +79,12 @@ public class SubAmbiente implements Serializable {
 		this.ambiente = ambiente;
 	}
 
-	public List<Luz> getLuzes() {
-		return luzes;
+	public List<Objeto> getObjetos() {
+		return objetos;
 	}
 
-	public void setLuzes(List<Luz> luzes) {
-		this.luzes = luzes;
+	public void setObjetos(List<Objeto> objetos) {
+		this.objetos = objetos;
 	}
 
 }

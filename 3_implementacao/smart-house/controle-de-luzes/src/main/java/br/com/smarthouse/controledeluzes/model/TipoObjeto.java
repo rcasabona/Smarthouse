@@ -3,7 +3,7 @@ package br.com.smarthouse.controledeluzes.model;
 public enum TipoObjeto {
 
 	LUSTRE("Lustre"), BANHEIRA("Banheira"), CHUVEIRO("Chuveiro"), LAMPADA("Lâmpada"), SOM("Som"), TELEVISAO(
-			"Televisão"), PLANTA("Planta"), PISCINA("Piscina");
+			"Televisão"), PLANTA("Planta"), PISCINA("Piscina"), RELE("Relê");
 
 	private TipoObjeto(final String nome) {
 		this.nome = nome;

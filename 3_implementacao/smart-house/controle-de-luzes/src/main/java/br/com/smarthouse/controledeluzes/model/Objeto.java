@@ -16,6 +16,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 /**
  * Entity que modela o Objeto.
  * 
@@ -35,10 +37,14 @@ public class Objeto implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID_OBJETO")
 	private Long id;
+	
+	@Column(name = "NOME")
+	private String nome;
 
+	@JsonIgnore
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "ID_AMBIENTE")
-	private Ambiente ambiente;
+	@JoinColumn(name = "ID_SUBAMBIENTE")
+	private SubAmbiente subAmbiente;
 
 	@Enumerated(EnumType.STRING)
 	@Column(name = "TIPO_OBJETO")
@@ -59,12 +65,20 @@ public class Objeto implements Serializable {
 		this.id = id;
 	}
 
-	public Ambiente getAmbiente() {
-		return ambiente;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setAmbiente(Ambiente ambiente) {
-		this.ambiente = ambiente;
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public SubAmbiente getSubAmbiente() {
+		return subAmbiente;
+	}
+
+	public void setSubAmbiente(SubAmbiente subAmbiente) {
+		this.subAmbiente = subAmbiente;
 	}
 
 	public TipoObjeto getTipoObjeto() {
