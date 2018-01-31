@@ -36,10 +36,10 @@ public class Ambiente implements Serializable {
 	private Long id;
 
 	@Enumerated(EnumType.STRING)
-	@Column(name = "TIPO_AMBIENTE")
+	@Column(name = "TIPO_AMBIENTE", length = 30, nullable = false)
 	private TipoAmbiente tipoAmbiente;
 
-	@Column(name = "DESCRICAO")
+	@Column(name = "DESCRICAO", length = 50, nullable = false)
 	private String descricao;
 	
 	@OneToMany(mappedBy = "ambiente", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)

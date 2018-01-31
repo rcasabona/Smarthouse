@@ -40,7 +40,7 @@ public class SubAmbiente implements Serializable {
 	private Long id;
 
 	@Enumerated(EnumType.STRING)
-	@Column(name = "TIPO_AMBIENTE", length = 30)
+	@Column(name = "TIPO_AMBIENTE", length = 30, nullable = false)
 	private TipoAmbiente tipoAmbiente;
 
 	@JsonIgnore

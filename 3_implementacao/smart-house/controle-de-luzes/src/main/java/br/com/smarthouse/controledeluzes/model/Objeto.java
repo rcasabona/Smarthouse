@@ -38,7 +38,7 @@ public class Objeto implements Serializable {
 	@Column(name = "ID_OBJETO")
 	private Long id;
 	
-	@Column(name = "NOME")
+	@Column(name = "NOME", length = 30, nullable = false)
 	private String nome;
 
 	@JsonIgnore
@@ -47,11 +47,11 @@ public class Objeto implements Serializable {
 	private SubAmbiente subAmbiente;
 
 	@Enumerated(EnumType.STRING)
-	@Column(name = "TIPO_OBJETO")
+	@Column(name = "TIPO_OBJETO", length = 20, nullable = false)
 	private TipoObjeto tipoObjeto;
 
 	@Enumerated(EnumType.STRING)
-	@Column(name = "LIGADO")
+	@Column(name = "LIGADO", length = 3, nullable = false)
 	private Ligado ligado;
 
 	@OneToMany(mappedBy = "objeto", fetch = FetchType.LAZY)
