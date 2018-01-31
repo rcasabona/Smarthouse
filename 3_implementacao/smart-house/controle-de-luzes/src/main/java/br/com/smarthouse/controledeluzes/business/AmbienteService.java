@@ -16,6 +16,6 @@ public interface AmbienteService {
 	 */
 	public List<Ambiente> list();
 	
-	public List<Ambiente> findByIdAmbiente(final Long idAmbiente);
+	public Ambiente findByIdAmbiente(final Long idAmbiente);
 
 }

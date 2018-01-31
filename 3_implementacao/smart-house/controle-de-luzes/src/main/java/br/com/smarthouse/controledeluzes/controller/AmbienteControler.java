@@ -25,12 +25,7 @@ public class AmbienteControler {
 	}
 	
 	@RequestMapping(value = "/{idAmbiente}/", method = RequestMethod.GET, produces = "application/json")
-	public @ResponseBody Ambiente ambiente(final @PathVariable int idAmbiente) {
-		return null;
-	}
-	
-	@RequestMapping(value = "/{idAmbiente}/list/", method = RequestMethod.GET, produces = "application/json")
-	public @ResponseBody List<Ambiente> list(@PathVariable("idAmbiente") final Long idAmbiente) {
+	public @ResponseBody Ambiente ambiente(final @PathVariable Long idAmbiente) {
 		return ambienteService.findByIdAmbiente(idAmbiente);
 	}
 	
