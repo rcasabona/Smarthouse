@@ -32,12 +32,23 @@ module.exports = {
     renderAmbiente: (req, res) => {
         var idAmbiente = req.params.idAmbiente;
 
-        // configurações da requisição
-        var AMBIENTE = 1;
+        // configurações da requisição do Ambiente
+        // var configuracoes = {
+        //     hostname: 'localhost',
+        //     port: 9090,
+        //     path: '/controle-de-luzes/ambientes/' + idAmbiente + '/',
+        //     headers: {
+        //         'Accept': 'application/json',
+        //         'Content-type': 'application/json'
+        //     }
+        // };
+
+        // configurações da requisição dos Sub-Ambientes
+
         var configuracoes = {
             hostname: 'localhost',
             port: 9090,
-            path: '/controle-de-luzes/ambientes/' + idAmbiente + '/',
+            path: '/controle-de-luzes/ambientes/' + idAmbiente + '/list/',
             headers: {
                 'Accept': 'application/json',
                 'Content-type': 'application/json'

@@ -10,7 +10,7 @@ import br.com.smarthouse.controledeluzes.model.SubAmbiente;
 
 public interface SubAmbienteDAO extends JpaRepository<SubAmbiente, Long> {
 	
-	@Query("select s from SubAmbiente s where s.id = :idAmbiente")
+	@Query("select s from SubAmbiente s where s.ambiente.id = :idAmbiente")
 	public List<SubAmbiente> findByIdAmbiente(@Param("idAmbiente") Long idAmbiente);
 
 }

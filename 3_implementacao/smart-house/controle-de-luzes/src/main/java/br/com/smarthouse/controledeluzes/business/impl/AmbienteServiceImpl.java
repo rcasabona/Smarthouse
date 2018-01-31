@@ -20,4 +20,9 @@ public class AmbienteServiceImpl implements AmbienteService {
 		return ambienteDAO.findAll();
 	}
 
+	@Override
+	public List<Ambiente> findByIdAmbiente(final Long idAmbiente) {
+		return ambienteDAO.findByIdAmbiente(idAmbiente);
+	}
+
 }

@@ -1,14 +1,18 @@
 package br.com.smarthouse.controledeluzes.model;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -37,6 +41,9 @@ public class Ambiente implements Serializable {
 
 	@Column(name = "DESCRICAO")
 	private String descricao;
+	
+	@OneToMany(mappedBy = "ambiente", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+	private List<SubAmbiente> subAmbientes;
 
 	public Long getId() {
 		return id;
@@ -49,6 +56,10 @@ public class Ambiente implements Serializable {
 	public TipoAmbiente getTipoAmbiente() {
 		return tipoAmbiente;
 	}
+	
+	public String getTipoAmbienteStr() {
+		return tipoAmbiente.getNome();
+	}
 
 	public void setTipoAmbiente(TipoAmbiente tipoAmbiente) {
 		this.tipoAmbiente = tipoAmbiente;
@@ -60,6 +71,14 @@ public class Ambiente implements Serializable {
 
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
+	}
+
+	public List<SubAmbiente> getSubAmbientes() {
+		return subAmbientes;
+	}
+
+	public void setSubAmbientes(List<SubAmbiente> subAmbientes) {
+		this.subAmbientes = subAmbientes;
 	}
 
 }

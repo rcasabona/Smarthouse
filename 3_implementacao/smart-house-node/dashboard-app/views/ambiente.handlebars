@@ -64,7 +64,7 @@
             {{!-- Header --}}
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
 
-                {{#if ambiente}}
+                {{#if ambiente}} {{#each ambiente}}
 
                     {{!-- Caminho de pão --}}
                     <nav aria-label="breadcrumb">
@@ -72,14 +72,14 @@
                             <li class="breadcrumb-item">
                                 <a href="/admin/ambientes">Ambientes</a>
                             </li>
-                            <li class="breadcrumb-item active" aria-current="page">{{ambiente.tipoAmbiente}}</li>
+                            <li class="breadcrumb-item active" aria-current="page">{{this.tipoAmbienteStr}}</li>
                         </ol>
                     </nav>
 
 
                     {{!-- Menu direito --}}
                     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-                        <h1 class="h2">{{ambiente.tipoAmbiente}}</h1>
+                        <h1 class="h2">{{ambiente.tipoAmbienteStr}}</h1>
                         {{!--
                         <div class="btn-toolbar mb-2 mb-md-0">
                             <div class="btn-group mr-2">
@@ -92,9 +92,9 @@
                             </button>
                         </div> --}}
                     </div>
-                    {{!-- Formulário de controle do Ambiente --}} {{#if ambiente.subAmbientes}} {{#each ambiente.subAmbientes}}
+                    {{!-- Formulário de controle do Ambiente --}} {{#if subAmbientes}} {{#each subAmbientes}}
                     <fieldset class="form-group">
-                        <legend>{{this.tipoAmbiente}}</legend>
+                        <legend>{{this.tipoAmbienteStr}}</legend>
                         {{#if luzes}} {{#each luzes}}
                         <button id="controleSala_salaDeEstar_lustre" name="{{this.nome}}" data-porta="{{this.porta}}" type="button" class="btn btn-primary btn-lg btn-block controle-btn"
                             data-toggle="button" aria-pressed="false" autocomplete="off">
@@ -103,6 +103,8 @@
                         {{/each}} {{/if}}
                     </fieldset>
                     {{/each}} {{/if}}
+
+                    {{/each}}
 
                 {{/if}}
 

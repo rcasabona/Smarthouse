@@ -13,7 +13,7 @@ import br.com.smarthouse.controledeluzes.business.SubAmbienteService;
 import br.com.smarthouse.controledeluzes.model.SubAmbiente;
 
 @Controller
-@RequestMapping("/subAmbientes")
+@RequestMapping("/sub-ambientes")
 public class SubAmbienteController {
 	
 	@Autowired

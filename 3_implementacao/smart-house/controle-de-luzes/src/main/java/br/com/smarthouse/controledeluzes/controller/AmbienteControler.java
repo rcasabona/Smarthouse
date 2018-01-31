@@ -28,14 +28,14 @@ public class AmbienteControler {
 		return montaListaDeAmbientes();
 	}
 	
-//	@RequestMapping(value = "/comSubAmbientes/", method = RequestMethod.GET, produces = "application/json")
-//	public @ResponseBody List<Ambiente> listAmbientesComSubAmbientes() {
-//		return ambienteService.listAmbientesComSubAmbientes();
-//	}
-	
 	@RequestMapping(value = "/{idAmbiente}/", method = RequestMethod.GET, produces = "application/json")
-	public @ResponseBody Ambiente listAmbiente(final @PathVariable int idAmbiente) {
+	public @ResponseBody Ambiente ambiente(final @PathVariable int idAmbiente) {
 		return montaListaDeAmbiente();
+	}
+	
+	@RequestMapping(value = "/{idAmbiente}/list/", method = RequestMethod.GET, produces = "application/json")
+	public @ResponseBody List<Ambiente> list(@PathVariable("idAmbiente") final Long idAmbiente) {
+		return ambienteService.findByIdAmbiente(idAmbiente);
 	}
 	
 	private List<Ambiente> montaListaDeAmbientes() {

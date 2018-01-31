@@ -62,6 +62,10 @@ public class SubAmbiente implements Serializable {
 	public TipoAmbiente getTipoAmbiente() {
 		return tipoAmbiente;
 	}
+	
+	public String getTipoAmbienteStr() {
+		return tipoAmbiente.getNome();
+	} 
 
 	public void setTipoAmbiente(TipoAmbiente tipoAmbiente) {
 		this.tipoAmbiente = tipoAmbiente;
