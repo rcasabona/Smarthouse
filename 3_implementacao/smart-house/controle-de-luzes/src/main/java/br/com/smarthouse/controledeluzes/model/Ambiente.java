@@ -12,8 +12,12 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * Entity que modela o Ambiente.
@@ -44,6 +48,11 @@ public class Ambiente implements Serializable {
 	
 	@OneToMany(mappedBy = "ambiente", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
 	private List<SubAmbiente> subAmbientes;
+	
+	@JsonIgnore
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "ID_CONFIGURACOES_DE_AMBIENTE")
+	private ConfiguracoesDeAmbiente configuracoesDeAmvbiente;
 
 	public Long getId() {
 		return id;

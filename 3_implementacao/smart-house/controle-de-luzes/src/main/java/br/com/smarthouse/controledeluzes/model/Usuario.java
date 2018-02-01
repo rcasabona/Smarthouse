@@ -30,15 +30,14 @@ public class Usuario implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
+	@Column(name = "NOME", length = 20)
 	private String nome;
 	
+	@Column(name = "SOBRENOME", length = 30)
 	private String sobrenome;
 	
+	@Column(name = "DATA_NASCIMENTO", length = 10)
 	private Date dataNascimento;
-	
-	private String usuario;
-	
-	private String senha;
 
 	public Long getId() {
 		return id;
@@ -70,22 +69,6 @@ public class Usuario implements Serializable {
 
 	public void setDataNascimento(Date dataNascimento) {
 		this.dataNascimento = dataNascimento;
-	}
-
-	public String getUsuario() {
-		return usuario;
-	}
-
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
-	}
-
-	public String getSenha() {
-		return senha;
-	}
-
-	public void setSenha(String senha) {
-		this.senha = senha;
 	}
 
 }
