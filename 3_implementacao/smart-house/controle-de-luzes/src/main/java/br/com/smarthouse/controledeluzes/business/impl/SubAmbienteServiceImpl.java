@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.smarthouse.controledeluzes.business.SubAmbienteService;
-import br.com.smarthouse.controledeluzes.model.SubAmbiente;
+import br.com.smarthouse.controledeluzes.model.ambiente.SubAmbiente;
 import br.com.smarthouse.controledeluzes.persistence.SubAmbienteDAO;
 
 @Service

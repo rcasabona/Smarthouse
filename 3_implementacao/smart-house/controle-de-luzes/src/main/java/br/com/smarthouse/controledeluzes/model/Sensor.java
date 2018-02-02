@@ -17,6 +17,8 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import br.com.smarthouse.controledeluzes.model.ambiente.Objeto;
+
 /**
  * Entity que modela o Sensor.
  * 

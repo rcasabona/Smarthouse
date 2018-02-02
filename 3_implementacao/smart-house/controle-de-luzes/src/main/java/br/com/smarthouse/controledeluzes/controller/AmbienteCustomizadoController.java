@@ -7,19 +7,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import br.com.smarthouse.controledeluzes.business.ConfiguracoesDeAmbienteService;
-import br.com.smarthouse.controledeluzes.model.ConfiguracoesDeAmbiente;
+import br.com.smarthouse.controledeluzes.business.AmbienteCustomizadoService;
 
 @Controller
-@RequestMapping("/configuracoesDeAmbiente")
-public class ConfiguracoesDeAmbienteController {
+@RequestMapping("/ambienteCustomizado")
+public class AmbienteCustomizadoController {
 	
 	@Autowired
-	private ConfiguracoesDeAmbienteService configuracoesDeAmbienteService;
+	private AmbienteCustomizadoService ambienteCustomizadoService;
 	
-	@RequestMapping(value = "/aplicaConfiguracao/{configuracoesDeAmbiente}/", method = RequestMethod.PUT, produces = "application/json")
+	@RequestMapping(value = "/{idConfiguracoesDeAmbiente}/", method = RequestMethod.GET, produces = "application/json")
 	public @ResponseBody void aplicaConfiguracao(final @PathVariable Long idConfiguracoesDeAmbiente) {
-		configuracoesDeAmbienteService.aplicaConfiguracao(configuracoesDeAmbiente);
+		ambienteCustomizadoService.getAmbienteCustomizadoById(idConfiguracoesDeAmbiente);
 	}
 
 }

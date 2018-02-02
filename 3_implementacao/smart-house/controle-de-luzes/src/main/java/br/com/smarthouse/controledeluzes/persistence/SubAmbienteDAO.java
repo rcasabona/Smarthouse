@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import br.com.smarthouse.controledeluzes.model.SubAmbiente;
+import br.com.smarthouse.controledeluzes.model.ambiente.SubAmbiente;
 
 public interface SubAmbienteDAO extends JpaRepository<SubAmbiente, Long> {
 	

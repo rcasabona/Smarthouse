@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import br.com.smarthouse.controledeluzes.business.SubAmbienteService;
-import br.com.smarthouse.controledeluzes.model.SubAmbiente;
+import br.com.smarthouse.controledeluzes.model.ambiente.SubAmbiente;
 
 @Controller
 @RequestMapping("/sub-ambientes")

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import br.com.smarthouse.controledeluzes.business.AmbienteService;
-import br.com.smarthouse.controledeluzes.model.Ambiente;
+import br.com.smarthouse.controledeluzes.model.ambiente.Ambiente;
 
 @Controller
 @RequestMapping("/ambientes")
