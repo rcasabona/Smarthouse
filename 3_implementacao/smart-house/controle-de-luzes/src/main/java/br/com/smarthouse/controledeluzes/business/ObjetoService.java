@@ -13,5 +13,7 @@ public interface ObjetoService {
 	public boolean verificaSeObjetoEstaLigado(final Objeto objeto);
 	
 	public void ligaDesliga(final Long idObjeto);
+	
+	public void save(final Objeto objeto);
 
 }

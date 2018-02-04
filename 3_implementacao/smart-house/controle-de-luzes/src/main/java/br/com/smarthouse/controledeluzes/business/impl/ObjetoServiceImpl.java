@@ -30,15 +30,20 @@ public class ObjetoServiceImpl implements ObjetoService {
 		// Desliga
 		if (verificaSeObjetoEstaLigado(objeto)) {
 			objeto.setLigado(Ligado.NAO);
-			objetoDAO.save(objeto);
+			this.save(objeto);
 			componentesService.iteraSobreOsComponentes(objeto.getComponente(), LigarDesligar.DESLIGAR);
 		// Liga
 		} else {
 			objeto.setLigado(Ligado.SIM);
-			objetoDAO.save(objeto);
+			this.save(objeto);
 			componentesService.iteraSobreOsComponentes(objeto.getComponente(), LigarDesligar.LIGAR);
 		}
 			
+	}
+	
+	@Override
+	public void save(final Objeto objeto) {
+		objetoDAO.save(objeto);
 	}
 
 }

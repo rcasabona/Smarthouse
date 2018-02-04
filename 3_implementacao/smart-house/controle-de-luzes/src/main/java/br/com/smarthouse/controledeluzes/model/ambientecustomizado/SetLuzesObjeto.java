@@ -5,15 +5,12 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import br.com.smarthouse.controledeluzes.model.Ligado;
 import br.com.smarthouse.controledeluzes.model.ambiente.Objeto;
 
 @Entity
@@ -38,20 +35,15 @@ public class SetLuzesObjeto implements Serializable {
 	@JoinColumn(name = "id_set_luzes", insertable = false, updatable = false)
 	private SetLuzes setLuzes;
 	
-	@Column(name = "LIGADO")
-	@Enumerated(EnumType.STRING)
-	private Ligado ligado;
-	
 	public SetLuzesObjeto(){}
 	
-	public SetLuzesObjeto(final Objeto _objeto, final SetLuzes _setLuzes, final Ligado _ligado) {
+	public SetLuzesObjeto(final Objeto _objeto, final SetLuzes _setLuzes) {
 		// create primary key
 		this.id = new SetLuzesObjetoId(_objeto.getId(), _setLuzes.getId());
 		
 		// initialize attributes
 		this.objeto = _objeto;
 		this.setLuzes = _setLuzes;
-		this.ligado = _ligado;
 		
 		// update relationships to assure referential integrity
 		_setLuzes.getObjetos().add(this);
@@ -80,14 +72,6 @@ public class SetLuzesObjeto implements Serializable {
 
 	public void setSetLuzes(SetLuzes setLuzes) {
 		this.setLuzes = setLuzes;
-	}
-
-	public Ligado getLigado() {
-		return ligado;
-	}
-
-	public void setLigado(Ligado ligado) {
-		this.ligado = ligado;
 	}
 
 	public static class SetLuzesObjetoId implements Serializable {

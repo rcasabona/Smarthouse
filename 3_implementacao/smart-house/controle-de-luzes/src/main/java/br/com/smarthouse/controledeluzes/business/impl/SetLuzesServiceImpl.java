@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.smarthouse.controledeluzes.business.ComponentesService;
+import br.com.smarthouse.controledeluzes.business.ObjetoService;
 import br.com.smarthouse.controledeluzes.business.SetLuzesService;
 import br.com.smarthouse.controledeluzes.model.Ligado;
 import br.com.smarthouse.controledeluzes.model.ambiente.Objeto;
@@ -23,6 +24,9 @@ public class SetLuzesServiceImpl implements SetLuzesService {
 	
 	@Autowired
 	private ComponentesService componentesService;
+	
+	@Autowired
+	private ObjetoService objetoService;
 
 	@Override
 	public SetLuzes findOne(final Long idSetLuzes) {
@@ -42,17 +46,28 @@ public class SetLuzesServiceImpl implements SetLuzesService {
 		for (SetLuzesObjeto setLuzesObjeto : setLuzesObjetos) {
 			final Objeto objeto = setLuzesObjeto.getObjeto();
 			// Liga/Desliga a luz
-			executaAcaoPassadaPeloObjeto(objeto, setLuzesObjeto.getLigado());
+			executaAcaoPassadaPeloObjeto(objeto);
 		}
 		
 		return false;
 	}
 
-	private void executaAcaoPassadaPeloObjeto(final Objeto objeto, final Ligado ligado) {
-		if (ligado.equals(Ligado.SIM))
-			componentesService.iteraSobreOsComponentes(objeto.getComponente(), LigarDesligar.LIGAR);
-		else
+	private void executaAcaoPassadaPeloObjeto(final Objeto objeto) {
+		// recupera o estado do objeto
+		final boolean objetoLigado = objetoService.verificaSeObjetoEstaLigado(objeto);
+		
+		if (objetoLigado) {
+			// salva novo estado do objeto
+			objeto.setLigado(Ligado.NAO);
+			objetoService.save(objeto);
 			componentesService.iteraSobreOsComponentes(objeto.getComponente(), LigarDesligar.DESLIGAR);
+		}
+		else {
+			// salva novo estado do objeto
+			objeto.setLigado(Ligado.SIM);
+			objetoService.save(objeto);
+			componentesService.iteraSobreOsComponentes(objeto.getComponente(), LigarDesligar.LIGAR);
+		}
 	}
 
 	@Override

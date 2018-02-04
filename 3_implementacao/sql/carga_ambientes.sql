@@ -60,14 +60,15 @@ INSERT INTO componente (id_componente, ativo, data_da_instalacao, nome, porta, t
 (5, 0, '2015/05/19', 'rele teste', '6', 'RELE', 9);
 INSERT INTO componente (id_componente, ativo, data_da_instalacao, nome, porta, tipo_componente, id_objeto) VALUES
 (6, 0, '2015/05/19', 'rele teste', '5', 'RELE', 9);
+INSERT INTO componente (id_componente, ativo, data_da_instalacao, nome, porta, tipo_componente, id_objeto) VALUES
+(7, 0, '2015/05/19', 'rele teste', '4', 'RELE', 9);
 
 
 -- ////////////////////////////////////////////////////////////////////////////////////////////////////////
 --   SET DE LUZES
 -- ////////////////////////////////////////////////////////////////////////////////////////////////////////
 SELECT * FROM set_luzes;
-INSERT INTO set_luzes (id_set_luzes, nome) VALUES (1, 'AMBIENTE CUSTOMIZADO LIGADO');
-INSERT INTO set_luzes (id_set_luzes, nome) VALUES (2, 'AMBIENTE CUSTOMIZADO DESLIGADO');
+INSERT INTO set_luzes (id_set_luzes, nome) VALUES (1, 'AMBIENTE CUSTOMIZADO 1');
 
 
 
@@ -75,5 +76,4 @@ INSERT INTO set_luzes (id_set_luzes, nome) VALUES (2, 'AMBIENTE CUSTOMIZADO DESL
 --   SET LUZES OBJETO
 -- ////////////////////////////////////////////////////////////////////////////////////////////////////////
 SELECT * FROM set_luzes_objeto;
-INSERT INTO set_luzes_objeto (id_set_luzes, id_objeto, ligado) VALUES (1, 9, 'SIM');
-INSERT INTO set_luzes_objeto (id_set_luzes, id_objeto, ligado) VALUES (2, 9, 'NAO');
+INSERT INTO set_luzes_objeto (id_set_luzes, id_objeto) VALUES (1, 9);
