@@ -20,14 +20,14 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import br.com.smarthouse.controledeluzes.model.ambiente.Objeto;
 
 /**
- * Entity que modela o Sensor.
+ * Entity que modela o Componente.
  * 
  * @author Rafael Casabona
  *
  */
 @Entity
-@Table(name = "SENSOR")
-public class Sensor implements Serializable {
+@Table(name = "COMPONENTE")
+public class Componente implements Serializable {
 
 	/**
 	 * 
@@ -36,7 +36,7 @@ public class Sensor implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	@Column(name = "ID_SENSOR")
+	@Column(name = "ID_COMPONENTE")
 	private Long id;
 	
 	@JsonIgnore
@@ -45,8 +45,8 @@ public class Sensor implements Serializable {
 	private Objeto objeto;
 	
 	@Enumerated(EnumType.STRING)
-	@Column(name =  "TIPO_SENSOR")
-	private TipoSensor tipoSensor;
+	@Column(name =  "TIPO_COMPONENTE")
+	private TipoComponente tipoComponente;
 	
 	private String nome;
 	
@@ -55,6 +55,9 @@ public class Sensor implements Serializable {
 	
 	@Column(name = "DATA_DA_INSTALACAO")
 	private Date dataDaInstalacao;
+	
+	@Column(name = "PORTA")
+	private String porta;
 
 	public Long getId() {
 		return id;
@@ -64,20 +67,20 @@ public class Sensor implements Serializable {
 		this.id = id;
 	}
 
-	public TipoSensor getTipoSensor() {
-		return tipoSensor;
-	}
-
-	public void setTipoSensor(TipoSensor tipoSensor) {
-		this.tipoSensor = tipoSensor;
-	}
-
 	public Objeto getObjeto() {
 		return objeto;
 	}
 
 	public void setObjeto(Objeto objeto) {
 		this.objeto = objeto;
+	}
+
+	public TipoComponente getTipoComponente() {
+		return tipoComponente;
+	}
+
+	public void setTipoComponente(TipoComponente tipoComponente) {
+		this.tipoComponente = tipoComponente;
 	}
 
 	public String getNome() {
@@ -102,6 +105,14 @@ public class Sensor implements Serializable {
 
 	public void setDataDaInstalacao(Date dataDaInstalacao) {
 		this.dataDaInstalacao = dataDaInstalacao;
+	}
+
+	public String getPorta() {
+		return porta;
+	}
+
+	public void setPorta(String porta) {
+		this.porta = porta;
 	}
 
 }

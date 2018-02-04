@@ -68,45 +68,27 @@
                 </div>
             </nav>
 
-
-
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
                 {{!-- Caminho de pão --}}
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item active" aria-current="page">Ambientes</li>
+                        <li class="breadcrumb-item active" aria-current="page">Set Luzes</li>
                     </ol>
                 </nav>
+                {{!-- Menu direito --}}
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Ambientes</h1>
+                    <h1 class="h2">Set Luzes</h1>
+                </div>
+                {{!-- Formulário de controle do Ambiente --}}
+                <fieldset class="form-group">
                     {{!--
-                    <div class="btn-toolbar mb-2 mb-md-0">
-                        <div class="btn-group mr-2">
-                            <button class="btn btn-sm btn-outline-secondary">Share</button>
-                            <button class="btn btn-sm btn-outline-secondary">Export</button>
-                        </div>
-                        <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                            <span data-feather="calendar"></span>
-                            This week
-                        </button>
-                    </div> --}}
-                </div>
-
-                <div class="list-group">
-                    {{#if ambientes}} {{#each ambientes}}
-                    <a href="/admin/ambientes/ambiente/{{this.id}}" class="list-group-item list-group-item-action flex-column align-items-start">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">{{this.tipoAmbienteStr}}</h5>
-                            <small>Ultima atualização 2 min(s)</small>
-                        </div>
-                        <p class="mb-1">{{this.descricao}}</p>
-                        {{!--
-                        <small>Donec id elit non mi porta.</small> --}}
-                    </a>
+                    <legend>Ts</legend> --}} {{#if setLuzes}} {{#each setLuzes}}
+                    <button id="controleSala_salaDeEstar_lustre" name="{{this.nome}}" data-id="{{this.id}}" type="button" class="btn btn-primary btn-lg btn-block controle-btn"
+                        data-toggle="button" aria-pressed="false" autocomplete="off">
+                        {{this.nome}}
+                    </button>
                     {{/each}} {{/if}}
-                </div>
-
-
+                </fieldset>
             </main>
         </div>
     </div>
@@ -122,6 +104,10 @@
     <script>
         feather.replace()
     </script> --}}
+
+    <!-- Core APP - controle da sala
+================================================== -->
+    <script src="/js/ambientes/setLuzes.js"></script>
 </body>
 
 </html>

@@ -48,7 +48,7 @@ module.exports = {
         var configuracoes = {
             hostname: 'localhost',
             port: 9090,
-            path: '/controle-de-luzes/ambientes/' + idAmbiente + '/list/',
+            path: '/controle-de-luzes/ambientes/' + idAmbiente + '/',
             headers: {
                 'Accept': 'application/json',
                 'Content-type': 'application/json'

@@ -1,6 +1,8 @@
 package br.com.smarthouse.controledeluzes.model.ambientecustomizado;
 
-import java.util.List;
+import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,25 +13,30 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "AMBIENTE_CUSTOMIZADO")
-public class AmbienteCustomizado {
+@Table(name = "SET_LUZES")
+public class SetLuzes implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 484214266542895779L;
+
 	@Id
+	@Column(name = "ID_SET_LUZES", updatable = false, nullable = false)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "ID_AMBIENTE_CUSTOMIZADO")
-	private Long id;
+	private long id;
 	
-	@Column(name = "NOME", length = 30)
+	@Column(name = "NOME")
 	private String nome;
 	
-	@OneToMany(mappedBy = "objeto")
-	private List<AmbienteCustomizadoEObjeto> objetos;
+	@OneToMany(mappedBy = "setLuzes")
+    private Set<SetLuzesObjeto> objetos = new HashSet<SetLuzesObjeto>();
 
-	public Long getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
@@ -41,11 +48,11 @@ public class AmbienteCustomizado {
 		this.nome = nome;
 	}
 
-	public List<AmbienteCustomizadoEObjeto> getObjetos() {
+	public Set<SetLuzesObjeto> getObjetos() {
 		return objetos;
 	}
 
-	public void setObjetos(List<AmbienteCustomizadoEObjeto> objetos) {
+	public void setObjetos(Set<SetLuzesObjeto> objetos) {
 		this.objetos = objetos;
 	}
 

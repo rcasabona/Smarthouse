@@ -56,5 +56,6 @@ module.exports = (app, passport, pool) => {
 	app.use(passport.initialize())
 	app.use(passport.session())
 
-	app.use('/', express.static(path.join(config.root, 'public')))
+	// app.use('/', express.static(path.join(config.root, 'public')))
+	app.use(express.static('public'))
 }

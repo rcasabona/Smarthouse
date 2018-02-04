@@ -1,7 +1,10 @@
 package br.com.smarthouse.controledeluzes.model.ambiente;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Objects;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,8 +22,9 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import br.com.smarthouse.controledeluzes.model.Ligado;
-import br.com.smarthouse.controledeluzes.model.Sensor;
+import br.com.smarthouse.controledeluzes.model.Componente;
 import br.com.smarthouse.controledeluzes.model.TipoObjeto;
+import br.com.smarthouse.controledeluzes.model.ambientecustomizado.SetLuzesObjeto;
 
 /**
  * Entity que modela o Objeto.
@@ -38,11 +42,11 @@ public class Objeto implements Serializable {
 	private static final long serialVersionUID = 5637998585004399420L;
 
 	@Id
+	@Column(name = "ID_OBJETO", updatable = false, nullable = false)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "ID_OBJETO")
 	private Long id;
-	
-	@Column(name = "NOME", length = 30, nullable = false)
+
+	@Column(name = "NOME", length = 80, nullable = false)
 	private String nome;
 
 	@JsonIgnore
@@ -59,7 +63,11 @@ public class Objeto implements Serializable {
 	private Ligado ligado;
 
 	@OneToMany(mappedBy = "objeto", fetch = FetchType.LAZY)
-	private List<Sensor> sensor;
+	private List<Componente> componente;
+
+	@JsonIgnore
+	@OneToMany(mappedBy = "objeto")
+    private Set<SetLuzesObjeto> setLuzes = new HashSet<SetLuzesObjeto>();
 
 	public Long getId() {
 		return id;
@@ -101,12 +109,35 @@ public class Objeto implements Serializable {
 		this.ligado = ligado;
 	}
 
-	public List<Sensor> getSensor() {
-		return sensor;
+	public List<Componente> getComponente() {
+		return componente;
 	}
 
-	public void setSensor(List<Sensor> sensor) {
-		this.sensor = sensor;
+	public void setComponente(List<Componente> componente) {
+		this.componente = componente;
+	}
+
+	public Set<SetLuzesObjeto> getSetLuzes() {
+		return setLuzes;
+	}
+
+	public void setSetLuzes(Set<SetLuzesObjeto> setLuzes) {
+		this.setLuzes = setLuzes;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o)
+			return true;
+		if (o == null || getClass() != o.getClass())
+			return false;
+		Objeto objeto = (Objeto) o;
+		return Objects.equals(nome, objeto.nome);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(nome);
 	}
 
 }

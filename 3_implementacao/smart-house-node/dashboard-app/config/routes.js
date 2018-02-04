@@ -5,6 +5,7 @@ const users = require('../app/service/users')
 const monitoring = require('../app/service/monitoring')
 const luzes = require('../app/service/luzes')
 const ambientes = require('../app/service/ambientes')
+const setLuzes = require('../app/service/setluzes')
 
 module.exports = (app, passport, db) => {
 	app.post('/api/login', passport.authenticate('local'), users.login)
@@ -17,6 +18,7 @@ module.exports = (app, passport, db) => {
 	// Ambientes
 	app.get('/admin/ambientes', requiresAdmin, ambientes.renderAmbientes)
 	app.get('/admin/ambientes/ambiente/:idAmbiente', requiresAdmin, ambientes.renderAmbiente)
+	app.get('/admin/setluzes', requiresAdmin, setLuzes.renderSetLuzes)
 	// Reports
 	app.get('/admin/reports', requiresAdmin, admin.renderReports)
 

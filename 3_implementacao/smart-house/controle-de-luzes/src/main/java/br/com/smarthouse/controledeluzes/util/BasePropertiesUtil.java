@@ -1,12 +1,12 @@
-package br.com.smarthouse.corearduino.util;
+package br.com.smarthouse.controledeluzes.util;
 
 import java.util.Properties;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import br.com.smarthouse.corearduino.vo.EnumAmbiente;
-import br.com.smarthouse.corearduino.vo.EnumProperties;
+import br.com.smarthouse.controledeluzes.vo.EnumAmbiente;
+import br.com.smarthouse.controledeluzes.vo.EnumProperties;
 
 /**
  * @author Rafael Casabona
@@ -41,15 +41,15 @@ public class BasePropertiesUtil {
 	}
 	
 	/**
-	 * metodo responsavel por recuperar a url do Arduino
+	 * metodo responsavel por recuperar a url do Core do Arduino
 	 * 
 	 * @throws Exception
 	 * @since 14/01/2018
 	 */
-	public static String getURIArduino() {
+	public static String getURICoreArduino() {
 		String uriArduino = "";
 		try {
-			uriArduino = getEstruturaProperties(EnumAmbiente.URI_ARDUINO);
+			uriArduino = getEstruturaProperties(EnumAmbiente.URI_COREARDUINO);
 		} catch (final Exception e) {
 			LOG.error(e);
 		}

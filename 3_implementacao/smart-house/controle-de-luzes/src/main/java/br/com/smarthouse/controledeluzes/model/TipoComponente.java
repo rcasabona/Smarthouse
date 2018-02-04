@@ -1,10 +1,10 @@
 package br.com.smarthouse.controledeluzes.model;
 
-public enum TipoSensor {
+public enum TipoComponente {
 	
-	SENSOR_PRESENCA("Sensor de Presença"),  SENSOR_DE_LUMINOSIDADE("Sensor de Luminosidade");
+	SENSOR_PRESENCA("Sensor de Presença"), SENSOR_DE_LUMINOSIDADE("Sensor de Luminosidade"), RELE("Relé");
 	
-	private TipoSensor(final String nome) {
+	private TipoComponente(final String nome) {
 		this.nome = nome;
 	}
 	
